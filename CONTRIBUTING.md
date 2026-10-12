@@ -9,12 +9,23 @@ The skill's four rules apply to changes too. A change that makes the résumé le
 ## Set up
 
 ```bash
-python3 -m pip install -r requirements.txt pytest pyyaml jsonschema ruff
+python3 -m pip install -r requirements.txt -r requirements-dev.txt
 pytest -q
 ruff check .
 ```
 
-Optional: `poppler-utils` (for `pdftotext`) and a LaTeX engine let the full test suite run; tests that need them are skipped otherwise.
+Optional: `poppler-utils` (for `pdftotext`) and a LaTeX engine let the full test suite run; tests that need them are skipped otherwise. Set `RJT_REQUIRE_TOOLS=1` to make those tests fail instead of skipping, as CI does on Linux.
+
+## What CI checks
+
+Every push to `main` and every pull request runs [`.github/workflows/ci.yml`](.github/workflows/ci.yml). It also runs once a week, so a new release of a dependency that breaks something shows up even when nothing here changed.
+
+- **Lint:** ruff on the Python code, and actionlint and zizmor on the workflow files.
+- **Tests:** the full suite on Linux with Python 3.9, 3.13, 3.14 and 3.15, with poppler and LaTeX installed; on Linux with the oldest dependency versions in `requirements.txt`; on macOS with poppler; and on Windows with neither tool, which also tests the fallbacks.
+- **Plugin:** Claude Code's validator on `plugin.json`, `marketplace.json` and the skill, in strict mode. The CLI version is pinned in `tools/claude-code/package-lock.json`.
+- **Package:** builds the upload zip, checks its layout and keeps it as a build artifact.
+
+A pull request can be merged when the `CI passed` check is green. Dependabot opens weekly pull requests for the pinned tools and actions; merge them when CI passes.
 
 ## Changing a script
 
@@ -37,5 +48,8 @@ Eval 1 uses a live job link that will close one day. Swap in any open data scien
 
 ## Releasing
 
-1. Update the version in `.claude-plugin/plugin.json` and in the `metadata` of `SKILL.md`, and add a `CHANGELOG.md` entry.
-2. Run `python3 tools/build_zip.py` and attach `dist/resume-jd-tuner.zip` to the GitHub release.
+1. Set the new version in `.claude-plugin/plugin.json` and in the `metadata` of `SKILL.md`, and add a `## X.Y.Z (date)` entry at the top of `CHANGELOG.md`. `python3 tools/release.py check` confirms they agree.
+2. Merge to `main` and wait for CI to pass.
+3. Tag the commit and push the tag: `git tag vX.Y.Z && git push origin vX.Y.Z`.
+
+The tag starts [`.github/workflows/release.yml`](.github/workflows/release.yml). It runs the whole of CI on the tagged commit, checks that the tag matches the version in all three places, builds the zip, and publishes a GitHub release with the zip attached and the changelog entry as its notes. If any step fails, nothing is published; fix the problem, move the tag and push it again. To rehearse a release without publishing, run the Release workflow by hand from the Actions tab.

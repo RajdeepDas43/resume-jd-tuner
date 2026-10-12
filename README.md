@@ -78,7 +78,7 @@ The skill follows the open Agent Skills format: a `SKILL.md` with scripts, refer
 
 ### Requirements
 
-Python 3.9+ with `reportlab`, `pypdf` and `pdfminer.six`:
+Python 3.9+ with `reportlab` 4.0+, `pypdf` 5.1+ and `pdfminer.six`:
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -156,12 +156,14 @@ tools/build_zip.py           builds dist/resume-jd-tuner.zip for the Claude apps
 ## Development
 
 ```bash
-python3 -m pip install -r requirements.txt pytest pyyaml jsonschema ruff
+python3 -m pip install -r requirements.txt -r requirements-dev.txt
 pytest -q                          # unit tests for every script
 ruff check .                       # lint
 claude plugin validate .           # plugin and marketplace manifests
-python3 tools/build_zip.py         # the upload zip, in dist/
+python3 tools/build_zip.py --check # the upload zip, in dist/, with a layout check
 ```
+
+CI runs all of this on every push and pull request, on Linux, macOS and Windows, and against the oldest dependency versions the skill supports. Pushing a `vX.Y.Z` tag publishes a release; [CONTRIBUTING.md](CONTRIBUTING.md) has the steps.
 
 [`evals/`](evals/) holds four end-to-end test cases with fictional candidates: a job link, a pasted posting with a DOCX résumé, a LaTeX résumé, and a job link that can't be fetched. [CONTRIBUTING.md](CONTRIBUTING.md) explains how to run them and how to propose changes.
 

@@ -1,3 +1,4 @@
+import os
 import shutil
 import zipfile
 
@@ -28,7 +29,7 @@ def test_docx_text_and_header_warning(tmp_path):
     make_docx(src)
     out = tmp_path / "cv.txt"
     proc = run_script("extract_text.py", src, "-o", out)
-    text = out.read_text()
+    text = out.read_text(encoding="utf-8")
     assert "Built the R&D dashboard." in text
     assert "jane@example.com" in text
     assert "contact details sit only in the page header" in proc.stdout
@@ -82,7 +83,8 @@ def test_dewrap_splits_word_symbol_font_bullets():
     assert not any(line.strip() == "" for line in out)
 
 
-@pytest.mark.skipif(not shutil.which("pdflatex"), reason="pdflatex not installed")
+@pytest.mark.skipif(not shutil.which("pdflatex") and not os.environ.get("RJT_REQUIRE_TOOLS"),
+                    reason="pdflatex not installed")
 def test_glued_words_detected_and_fixed_by_latex_lines(tmp_path):
     body = (r"\begin{document}" "\n"
             r"I worked as a \textbf{Forward Deployment Engineer} working with clients on \textbf{automated}"
@@ -93,7 +95,7 @@ def test_glued_words_detected_and_fixed_by_latex_lines(tmp_path):
     results = {}
     for name, extra in (("plain", ""), ("safe", safe)):
         tex = tmp_path / f"{name}.tex"
-        tex.write_text("\\documentclass{article}\n" + extra + body)
+        tex.write_text("\\documentclass{article}\n" + extra + body, encoding="utf-8")
         import subprocess
         subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", tex.name],
                        cwd=tmp_path, capture_output=True, timeout=120)

@@ -3,6 +3,21 @@
 Imported by the other scripts in this folder. Nothing here touches the network or the disk.
 """
 import re
+import sys
+
+
+def utf8_stdio():
+    """Write UTF-8 to stdout and stderr whatever the console's encoding.
+
+    On Windows, Python before 3.15 writes to a pipe in the ANSI code page (often cp1252), so
+    printing a character such as "ﬁ" or "→" from a résumé would crash the script.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):  # replaced or closed streams
+            pass
+
 
 # Characters that PDF extraction and word processors produce in place of plain ASCII.
 _REPLACEMENTS = {

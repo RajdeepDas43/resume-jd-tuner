@@ -1,3 +1,4 @@
+from conftest import run_script
 from slop_scan import scan
 
 CLEAN = """Jane Doe
@@ -67,3 +68,15 @@ def test_word_symbol_font_bullets_are_recognised():
     text = CLEAN.replace("• ", " ")
     r = scan(text)
     assert r["bullets"] >= 3 and r["verdict"] == "PASS"
+
+
+def test_output_is_utf8_on_a_non_utf8_console(tmp_path):
+    # Windows pipes default to the ANSI code page; "→" and "ł" are not in cp1252.
+    phrase = "Built the Łódź → Kraków pricing model with the regional finance team"
+    resume = tmp_path / "resume.txt"
+    jd = tmp_path / "jd.txt"
+    resume.write_text(f"Ann Lee\nEXPERIENCE\nAcme\nAnalyst\n• {phrase}.\n", encoding="utf-8")
+    jd.write_text(f"Data Analyst\nAcme\nYou will: {phrase}.\n", encoding="utf-8")
+    proc = run_script("slop_scan.py", resume, jd, check=False, env={"PYTHONIOENCODING": "cp1252"})
+    assert "Traceback" not in proc.stderr, proc.stderr
+    assert "łódź kraków" in proc.stdout.lower()  # the shared run, printed with its accents

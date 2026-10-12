@@ -1,0 +1,35 @@
+# Weekly pull requests for the pinned actions and Python tools. CI runs on each one.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /tools/claude-code
+    schedule:
+      interval: weekly
+    groups:
+      claude-code:
+        patterns: ["*"]
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    # Raise a requirement only when a new version falls outside it, so the minimum versions in
+    # requirements.txt stay as low as the code allows, and the pins in requirements-dev.txt move.
+    versioning-strategy: increase-if-necessary
+    groups:
+      python-tools:
+        patterns: ["*"]
+    ignore:
+      # These need Python 3.10 or later; the skill supports 3.9, the system Python on many Macs.
+      - dependency-name: pytest
+        versions: [">=9"]
+      - dependency-name: jsonschema
+        versions: [">=4.26"]

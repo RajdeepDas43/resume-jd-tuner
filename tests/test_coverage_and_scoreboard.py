@@ -61,7 +61,7 @@ def test_legacy_list_format(tmp_path):
     legacy = [{"ask": "Kafka streaming", "type": "nice", "alts": ["Kafka"]},
               {"ask": "PCI DSS", "type": "gap", "alts": ["PCI"]}]
     path = tmp_path / "asks.json"
-    path.write_text(json.dumps(legacy))
+    path.write_text(json.dumps(legacy), encoding="utf-8")
     data = load_asks(path)
     assert data["asks"][1]["claimable"] is False
     r = compute(data, TEXT)
@@ -97,9 +97,10 @@ def test_band_edges_and_risk():
 
 def test_scoreboard_cli(tmp_path):
     tuned = tmp_path / "tuned.txt"
-    tuned.write_text(TEXT)
+    tuned.write_text(TEXT, encoding="utf-8")
     jd = tmp_path / "jd.txt"
-    jd.write_text("Senior Backend Engineer\nHarborline\nRequirements:\n- Go\n- PostgreSQL\n- Kubernetes\n")
+    jd.write_text("Senior Backend Engineer\nHarborline\nRequirements:\n- Go\n- PostgreSQL\n- Kubernetes\n",
+                  encoding="utf-8")
     out = tmp_path / "sb.json"
     proc = run_script("scoreboard.py", "--asks", ASSETS / "example_jd_asks.json",
                       "--after", ASSETS / "example_grades.json", "--before", ASSETS / "example_grades.json",
@@ -107,6 +108,6 @@ def test_scoreboard_cli(tmp_path):
     assert "| Overall fit (0-100) |" in proc.stdout
     assert "Interview risk: High" in proc.stdout
     assert "terms marked not claimable are on the page: Terraform" in proc.stdout
-    result = json.loads(out.read_text())
+    result = json.loads(out.read_text(encoding="utf-8"))
     assert result["fit_after"]["score"] == result["fit_before"]["score"]
     assert result["fit_after"]["band"] == "Good"  # capped: M6 graded none

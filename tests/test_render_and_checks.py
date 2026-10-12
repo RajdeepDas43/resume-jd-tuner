@@ -24,7 +24,7 @@ def test_pdf_checks_pass_and_report_fill(example_pdf, tmp_path):
                       "--link", "linkedin.com/in/alex-rivera-example", "--require", "B.S. in Computer Science",
                       "--forbid", "Harborline", "--json", out)
     assert "PDF CHECKS: PASS" in proc.stdout
-    result = json.loads(out.read_text())
+    result = json.loads(out.read_text(encoding="utf-8"))
     assert result["fill"]["status"] == "UNDERFILLED"  # the example covers about 60% of the page
     assert result["fill"]["free_lines"] >= 10
     assert not result["glued_words"]
@@ -41,20 +41,20 @@ def test_overflow_and_full(tmp_path):
     src = tmp_path / "r.json"
     pdf = tmp_path / "r.pdf"
     # Far too much content: two pages.
-    src.write_text(json.dumps(make_resume(bullets_per_role=30, roles=2)))
+    src.write_text(json.dumps(make_resume(bullets_per_role=30, roles=2)), encoding="utf-8")
     run_script("render_resume_pdf.py", src, "-o", pdf)
     assert fill_report(pdf, 1)["status"] == "OVERFLOW"
     # Find the largest number of one-line bullets that still fits: the page must then be FULL.
     low, high = 1, 60
     while low < high:
         mid = (low + high + 1) // 2
-        src.write_text(json.dumps(make_resume(bullets_per_role=mid, roles=1)))
+        src.write_text(json.dumps(make_resume(bullets_per_role=mid, roles=1)), encoding="utf-8")
         run_script("render_resume_pdf.py", src, "-o", pdf)
         if fill_report(pdf, 1)["pages"] == 1:
             low = mid
         else:
             high = mid - 1
-    src.write_text(json.dumps(make_resume(bullets_per_role=low, roles=1)))
+    src.write_text(json.dumps(make_resume(bullets_per_role=low, roles=1)), encoding="utf-8")
     run_script("render_resume_pdf.py", src, "-o", pdf)
     report = fill_report(pdf, 1)
     assert report["pages"] == 1
@@ -63,14 +63,14 @@ def test_overflow_and_full(tmp_path):
 
 def test_renderer_rejects_bad_input(tmp_path):
     bad = tmp_path / "bad.json"
-    bad.write_text(json.dumps({"name": "", "contact": "x", "sections": [{"entries": []}]}))
+    bad.write_text(json.dumps({"name": "", "contact": "x", "sections": [{"entries": []}]}), encoding="utf-8")
     proc = run_script("render_resume_pdf.py", bad, "-o", tmp_path / "x.pdf", check=False)
     assert proc.returncode != 0
     assert "invalid resume JSON" in proc.stderr
 
 
 def test_unicode_names_render(tmp_path):
-    data = json.loads((ASSETS / "example_resume.json").read_text())
+    data = json.loads((ASSETS / "example_resume.json").read_text(encoding="utf-8"))
     data["name"] = "Łukasz Żółć-Müller"
     src, pdf = tmp_path / "u.json", tmp_path / "u.pdf"
     src.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
@@ -109,7 +109,7 @@ def test_fill_option_uses_more_of_the_page_without_changing_words(tmp_path):
 
 
 def test_detached_dates_are_reported(tmp_path):
-    data = json.loads((ASSETS / "example_resume.json").read_text())
+    data = json.loads((ASSETS / "example_resume.json").read_text(encoding="utf-8"))
     # A short entry with one short bullet: some readers move its right-aligned dates after the bullet.
     data["sections"][0]["entries"].append({"org": "Casa Verde Foods", "location": "Porto, Portugal",
                                            "role": "Marketing Assistant", "dates": "Sep 2019 – Mar 2021",
@@ -119,10 +119,10 @@ def test_detached_dates_are_reported(tmp_path):
     run_script("render_resume_pdf.py", src, "-o", pdf)
     out = tmp_path / "c.json"
     run_script("pdf_checks.py", pdf, "--source", src, "--json", out)
-    detached = json.loads(out.read_text())["detached_dates"]
+    detached = json.loads(out.read_text(encoding="utf-8"))["detached_dates"]
     run_script("render_resume_pdf.py", src, "-o", pdf, "--dates", "inline")
     run_script("pdf_checks.py", pdf, "--source", src, "--json", out)
-    assert json.loads(out.read_text())["detached_dates"] == []
+    assert json.loads(out.read_text(encoding="utf-8"))["detached_dates"] == []
     assert isinstance(detached, list)
 
 

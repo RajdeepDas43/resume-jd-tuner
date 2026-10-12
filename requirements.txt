@@ -1,4 +1,5 @@
-# Runtime dependencies of the skill's scripts
+# Runtime dependencies of the skill's scripts. CI also tests these minimum versions.
 reportlab>=4.0
-pypdf>=4.0
+# pypdf before 5.1 glues words together in extracted text, so the PDF checks report false failures.
+pypdf>=5.1
 pdfminer.six>=20221105

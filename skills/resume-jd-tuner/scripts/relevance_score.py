@@ -21,6 +21,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from resume_text import utf8_stdio  # noqa: E402
+
 STOPWORDS = set("""a an the and or but if then else for while to of in on at by with from as is are was
 were be been being have has had do does did will would can could should may might must shall not no nor
 so than too very just about above after again against all am any because before below between both down
@@ -170,6 +173,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:

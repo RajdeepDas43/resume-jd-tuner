@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from resume_text import BULLET, NON_PROSE, clean, is_header  # noqa: E402
+from resume_text import BULLET, NON_PROSE, clean, is_header, utf8_stdio  # noqa: E402
 
 # Word stems that read as machine-written or as filler on a resume. Matched at a word start.
 BANNED = [
@@ -87,7 +87,7 @@ def prose_lines(text):
 
 
 def grams(text, n):
-    words = re.findall(r"[a-z0-9+#/'\-]+", text.lower())
+    words = re.findall(r"[\w+#/'\-]+", text.lower())
     return {" ".join(words[i:i + n]) for i in range(len(words) - n + 1)}
 
 
@@ -222,6 +222,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:

@@ -28,7 +28,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from resume_text import BULLET, NON_PROSE, clean, is_header  # noqa: E402
+from resume_text import BULLET, NON_PROSE, clean, is_header, utf8_stdio  # noqa: E402
 
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 PHONE = re.compile(r"\+?\d[\d ()\-.]{7,}\d")
@@ -326,6 +326,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:  # output piped into head: the files are already written

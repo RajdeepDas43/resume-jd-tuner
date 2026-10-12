@@ -1,7 +1,7 @@
 {
   "name": "resume-jd-tuner",
   "displayName": "Résumé JD Tuner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailor a résumé to one job posting: a one-page, honest, ATS-safe résumé plus a fit report (ATS alignment, interview risk, gaps, quality check, overall fit), reviewed by AI-slop and recruiter agents.",
   "author": {
     "name": "Rajdeep Das",

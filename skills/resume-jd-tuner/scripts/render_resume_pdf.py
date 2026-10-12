@@ -50,6 +50,8 @@ except ImportError:
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from resume_text import utf8_stdio  # noqa: E402
+
 FONT_DIR = HERE.parent / "assets" / "fonts"
 FACES = {"regular": "Regular", "bold": "Bold", "italic": "Italic", "bolditalic": "BoldItalic"}
 SYSTEM_FONTS = [  # tried when the bundled fonts are missing: (directory, file pattern)
@@ -337,4 +339,5 @@ def autofill(data, out, args, fill_report):
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     main()
