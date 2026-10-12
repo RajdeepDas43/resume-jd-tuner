@@ -48,6 +48,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: zizmor .github/workflows
 
+      - name: Dependabot config schema (a typo there would silently stop updates)
+        run: check-jsonschema --builtin-schema vendor.dependabot .github/dependabot.yml
+
   test:
     name: Test (${{ matrix.os }}, Python ${{ matrix.python }}${{ matrix.deps == 'minimum' && ', oldest dependencies' || '' }})
     runs-on: ${{ matrix.os }}
@@ -97,12 +100,16 @@ jobs:
         env:
           DEPS: ${{ matrix.deps }}
         run: |
+          dev=requirements-dev.txt
+          if python -c 'import sys; sys.exit(0 if sys.version_info < (3, 10) else 1)'; then
+            dev=ci/python3.9/requirements-dev.txt  # pytest 9 needs Python 3.10+
+          fi
           if [ "$DEPS" = "minimum" ]; then
             # Same packages as requirements.txt, each pinned to its lowest allowed version.
             sed -E 's/>=/==/' requirements.txt > "$RUNNER_TEMP/requirements-minimum.txt"
-            python -m pip install -r "$RUNNER_TEMP/requirements-minimum.txt" -r requirements-dev.txt
+            python -m pip install -r "$RUNNER_TEMP/requirements-minimum.txt" -r "$dev"
           else
-            python -m pip install -r requirements.txt -r requirements-dev.txt
+            python -m pip install -r requirements.txt -r "$dev"
           fi
           python -m pip check
 

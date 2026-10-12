@@ -27,8 +27,17 @@ updates:
     groups:
       python-tools:
         patterns: ["*"]
+
+  # Test tools for the Python 3.9 CI jobs only.
+  - package-ecosystem: pip
+    directory: /ci/python3.9
+    schedule:
+      interval: weekly
+    groups:
+      python-3-9-tools:
+        patterns: ["*"]
     ignore:
-      # These need Python 3.10 or later; the skill supports 3.9, the system Python on many Macs.
+      # The last releases that support Python 3.9, the system Python on many Macs.
       - dependency-name: pytest
         versions: [">=9"]
       - dependency-name: jsonschema

@@ -155,6 +155,8 @@ tools/build_zip.py           builds dist/resume-jd-tuner.zip for the Claude apps
 
 ## Development
 
+With Python 3.10 or later (the skill itself runs on 3.9+):
+
 ```bash
 python3 -m pip install -r requirements.txt -r requirements-dev.txt
 pytest -q                          # unit tests for every script
