@@ -1,0 +1,84 @@
+name: Release
+
+# Push a tag such as v1.2.3 to publish a release. Run this workflow by hand from the Actions tab
+# to rehearse one: it runs every check and builds the zip on main, and publishes nothing.
+on:
+  push:
+    tags: ["v[0-9]+.[0-9]+.[0-9]+"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    name: CI
+    # "./" runs ci.yml from this same commit, the documented syntax for a workflow in this repository.
+    uses: ./.github/workflows/ci.yml # zizmor: ignore[self-repository]
+    permissions:
+      contents: read
+
+  publish:
+    name: ${{ github.ref_type == 'tag' && 'Publish' || 'Rehearse (publishes nothing)' }}
+    needs: ci
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write # to create the release; a rehearsal never uses it
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Check the tag is on main
+        if: github.ref_type == 'tag'
+        run: |
+          git fetch --no-tags origin main
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" FETCH_HEAD; then
+            echo "::error::$GITHUB_REF_NAME points at a commit that is not on main."
+            exit 1
+          fi
+
+      - name: Check the tag, plugin.json, SKILL.md and CHANGELOG.md agree
+        env:
+          TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+        run: python tools/release.py check ${TAG:+"$TAG"}
+
+      - name: Write the release notes
+        run: python tools/release.py notes > "$RUNNER_TEMP/notes.md"
+
+      - name: Build the zip and check its layout
+        run: python tools/build_zip.py --check
+
+      - name: Publish the release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            # A re-run, or a release made by hand: replace the zip, keep the notes.
+            gh release upload "$TAG" dist/resume-jd-tuner.zip --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$TAG" dist/resume-jd-tuner.zip --repo "$GITHUB_REPOSITORY" --verify-tag \
+              --title "Résumé JD Tuner ${TAG#v}" --notes-file "$RUNNER_TEMP/notes.md"
+          fi
+
+      - name: Summary
+        env:
+          MODE: "${{ github.ref_type == 'tag' && 'Published' || 'Rehearsal, nothing was published' }}"
+        run: |
+          {
+            echo "### $MODE"
+            echo
+            cat "$RUNNER_TEMP/notes.md"
+          } >> "$GITHUB_STEP_SUMMARY"

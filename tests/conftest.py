@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -12,10 +13,16 @@ ASSETS = SKILL / "assets"
 sys.path.insert(0, str(SCRIPTS))
 
 
-def run_script(name, *args, check=True):
-    """Run a skill script the way the agent does and return the completed process."""
+def run_script(name, *args, check=True, env=None):
+    """Run a skill script the way the agent does and return the completed process.
+
+    The scripts write UTF-8 whatever the platform, so their output is decoded as UTF-8 here.
+    `env` adds variables to the inherited environment.
+    """
+    full_env = {**os.environ, **env} if env else None
     proc = subprocess.run([sys.executable, str(SCRIPTS / name), *map(str, args)],
-                          capture_output=True, text=True, timeout=180)
+                          capture_output=True, text=True, encoding="utf-8", errors="replace",
+                          timeout=180, env=full_env)
     if check and proc.returncode != 0:
         raise AssertionError(f"{name} failed ({proc.returncode}):\n{proc.stdout}\n{proc.stderr}")
     return proc

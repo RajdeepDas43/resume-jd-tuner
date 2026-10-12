@@ -1,0 +1,7 @@
+# Check out text files with LF line endings on every platform, Windows included.
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.ttf binary
+*.docx binary
+*.zip binary

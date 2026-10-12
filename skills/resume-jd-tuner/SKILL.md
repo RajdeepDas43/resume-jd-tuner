@@ -2,9 +2,9 @@
 name: resume-jd-tuner
 description: Tailor a résumé to one job posting and report how well it fits. Takes a job link (or the pasted job text when the link will not load) and the user's résumé (PDF, DOCX, LaTeX or text). Returns a one-page tuned résumé PDF and a fit report covering ATS alignment, interview risk, gaps to close, a quality check and the overall fit before and after tuning. Every claim stays true and the page reads like a person wrote it; reviewer agents screen the draft for AI slop and errors, then recruiter agents verify it against the job before delivery. Use whenever someone shares a job posting, job link or JD with a résumé or CV, asks to tailor, tune, target, optimize or rewrite a résumé or CV for a role, wants an ATS or keyword match check, or asks whether they fit a job, even if they never say "résumé".
 license: Apache-2.0
-compatibility: Python 3.9+ with reportlab, pypdf and pdfminer.six (scripts/check_env.py checks). A web fetch tool for job links; pasted text works without one. Subagents are optional. LaTeX résumés need pdflatex, xelatex or lualatex.
+compatibility: Python 3.9+ with reportlab 4.0.4+, pypdf 5.1+ and pdfminer.six (scripts/check_env.py checks). A web fetch tool for job links; pasted text works without one. Subagents are optional. LaTeX résumés need pdflatex, xelatex or lualatex.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   author: Rajdeep Das
   repository: https://github.com/RajdeepDas43/resume-jd-tuner
 ---
@@ -35,7 +35,7 @@ Two readers must accept the page. An ATS parses the PDF and matches the job's ex
 ## Setup and where files go
 
 - Scripts live in this skill's `scripts/` folder. Call them by full path, written below as `<skill>/scripts/...` (the folder that holds this SKILL.md). Use `python3`, or `python` on Windows.
-- Run `python3 <skill>/scripts/check_env.py` once. Install anything it reports missing (`python3 -m pip install reportlab pypdf pdfminer.six`). If a check cannot run, say which one was skipped in the report rather than pretending it passed.
+- Run `python3 <skill>/scripts/check_env.py` once. Install or upgrade anything it reports missing or outdated; it prints the exact command, and it exits with an error until the required packages are in place. If a check cannot run, say which one was skipped in the report rather than pretending it passed.
 - Create the application folder, `<company>-<role>/` (lowercase, hyphens), in the user's working folder or wherever they ask, with `work/` inside it. In a chat app without a working folder, use the session's output folder and attach the files at the end.
 - If the folder already holds a build for this job, move the old PDF and report into `work/previous-<date>/` first, so nothing the user approved is lost.
 - Keep every intermediate file, including any helper script you write, inside `work/`. Never use a shared temp folder: parallel runs overwrite each other there.
@@ -193,7 +193,7 @@ Then reply in the chat with five lines at most: the overall fit before and after
 
 | Script | What it does |
 |---|---|
-| `check_env.py` | Lists the tools available and how to install what's missing |
+| `check_env.py` | Lists the tools available, flags missing or outdated packages and prints the install command |
 | `extract_text.py` | Text from PDF, DOCX, LaTeX, HTML, Markdown or text; flags scanned PDFs, header-only contact details and reader disagreement; `--dewrap` gives one line per bullet for reviewers |
 | `render_resume_pdf.py` | Résumé JSON to a Harvard-style PDF with an embedded Unicode font and clickable links; prints the FILL status. `--dates inline` for parser-proof dates, `--fill` as the last-resort layout fill |
 | `pdf_checks.py` | Page count, page fill (free lines at the bottom), garbled or glued text, dates detached from their role, headers, contact, links, required and forbidden text |

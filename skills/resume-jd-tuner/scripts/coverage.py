@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from resume_text import clean, find_term, skills_and_prose  # noqa: E402
+from resume_text import clean, find_term, skills_and_prose, utf8_stdio  # noqa: E402
 
 WEIGHT = {"must": 2, "nice": 1}
 
@@ -169,6 +169,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:

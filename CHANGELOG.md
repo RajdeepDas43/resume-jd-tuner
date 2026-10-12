@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2026-10-12)
+
+- The minimum versions are now pypdf 5.1 and reportlab 4.0.4. Older pypdf glues words together when it extracts text, so the PDF checks reported words as glued on PDFs that were fine. reportlab 4.0.0 also installs pycairo, which has to be compiled against the cairo C library on Linux, so it failed to install on a machine without it. `check_env.py` now flags packages that are too old and exits with an error until they are upgraded.
+- The scripts write UTF-8 on Windows. Before, printing a character such as "ﬁ" or "→" from a résumé into a pipe that uses the Windows code page stopped the script with an error.
+- Words with accents or in other scripts, such as "Zürich" or "Łódź", now count as whole words when the slop scan looks for phrases copied from the posting and when the PDF checks look for glued words.
+- CI runs the tests on Linux (Python 3.9, 3.13, 3.14 and 3.15, plus the oldest supported versions of the dependencies), macOS and Windows. It also checks the plugin manifests and the skill with Claude Code's validator, lints the workflows, and checks the layout of the upload zip. Actions are pinned to commit SHAs, and Dependabot proposes updates.
+- Pushing a `vX.Y.Z` tag runs CI, checks that the tag, `plugin.json`, `SKILL.md` and this changelog agree, builds the zip and publishes the release.
+
 ## 1.0.0 (2026-10-12)
 
 First public release.

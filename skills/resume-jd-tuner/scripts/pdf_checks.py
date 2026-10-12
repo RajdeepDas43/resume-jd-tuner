@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from resume_text import clean, core_sections_found, find_term  # noqa: E402
+from resume_text import clean, core_sections_found, find_term, utf8_stdio  # noqa: E402
 
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 PHONE = re.compile(r"\+?\d[\d ()\-.]{7,}\d")
@@ -248,7 +248,7 @@ def words_of(text):
     text = re.sub(r"([a-z])-\s*\n\s*([a-z])", r"\1\2", clean(text))
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"&(?:[a-zA-Z]+|#\d+);", " ", text)
-    return re.findall(r"[a-z]+", text.lower())
+    return re.findall(r"[^\W\d_]+", text.lower())  # letters in any script, so "zürich" stays one word
 
 
 # ------------------------------------------------------------------ main
@@ -277,8 +277,8 @@ def run(args):
     if ligatures:
         warns.append(f"{ligatures} ligature characters (e.g. 'ﬁ'): some parsers misread words that contain them")
     if len(texts) == 2:
-        a = set(re.findall(r"[a-z0-9]{3,}", clean(texts["pdftotext"]).lower()))
-        b = set(re.findall(r"[a-z0-9]{3,}", clean(texts["pypdf"]).lower()))
+        a = set(re.findall(r"[^\W_]{3,}", clean(texts["pdftotext"]).lower()))
+        b = set(re.findall(r"[^\W_]{3,}", clean(texts["pypdf"]).lower()))
         agreement = len(a & b) / max(1, len(a | b))
         result["reader_agreement"] = round(agreement, 3)
         if agreement < 0.9:
@@ -417,6 +417,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:

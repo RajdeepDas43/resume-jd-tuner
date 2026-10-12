@@ -1,0 +1,8 @@
+{
+  "name": "resume-jd-tuner-ci-tools",
+  "private": true,
+  "description": "Pins the Claude Code CLI that CI uses to validate the plugin manifests and the skill.",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "2.1.296"
+  }
+}

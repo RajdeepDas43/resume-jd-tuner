@@ -1,4 +1,7 @@
-# Runtime dependencies of the skill's scripts
-reportlab>=4.0
-pypdf>=4.0
+# Runtime dependencies of the skill's scripts. CI also tests these minimum versions.
+# reportlab 4.0.0 also installs pycairo, which has to be compiled against the cairo C library on
+# Linux. From 4.0.4 pycairo is optional.
+reportlab>=4.0.4
+# pypdf before 5.1 glues words together in extracted text, so the PDF checks report false failures.
+pypdf>=5.1
 pdfminer.six>=20221105

@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from coverage import compute as coverage_compute  # noqa: E402
 from coverage import load_asks
 from relevance_score import score as keyword_score  # noqa: E402
+from resume_text import utf8_stdio  # noqa: E402
 
 VALUE = {"clear": 1.0, "weak": 0.5, "none": 0.0}
 WEIGHT = {"must": 3, "role": 2, "nice": 1}
@@ -225,6 +226,7 @@ def main():
 
 
 if __name__ == "__main__":
+    utf8_stdio()
     try:
         main()
     except BrokenPipeError:
