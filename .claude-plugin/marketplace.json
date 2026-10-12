@@ -1,0 +1,17 @@
+{
+  "name": "resume-jd-tuner",
+  "description": "Résumé JD Tuner: tailor a résumé to a job posting honestly, with a fit report.",
+  "owner": {
+    "name": "Rajdeep Das",
+    "url": "https://github.com/RajdeepDas43"
+  },
+  "plugins": [
+    {
+      "name": "resume-jd-tuner",
+      "source": "./",
+      "description": "Tailor a résumé to one job posting: a one-page, honest, ATS-safe résumé plus a fit report (ATS alignment, interview risk, gaps, quality check, overall fit).",
+      "category": "productivity",
+      "tags": ["resume", "cv", "ats", "job-search"]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=2pt}
+\newcommand{\role}[4]{\textbf{#1} \hfill #2 \\ \textit{#3} \hfill \textit{#4}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Arjun Mehta}} \\[3pt]
+Bengaluru, India $|$ arjun.mehta.ml@example.com $|$ +91 55555 01234 $|$
+\href{https://github.com/arjun-mehta-example}{github.com/arjun-mehta-example} $|$
+\href{https://www.linkedin.com/in/arjun-mehta-example}{linkedin.com/in/arjun-mehta-example}
+\end{center}
+
+\section{Summary}
+\textbf{Machine Learning Engineer} working on recommendation and ranking models for a B2B analytics product. Passionate about building \textbf{robust} end-to-end ML systems that deliver business value.
+
+\section{Experience}
+\role{Kestrel Analytics}{Bengaluru}{Machine Learning Engineer}{Jul 2022 -- Present}
+\begin{itemize}
+  \item Built the \textbf{recommendation} ranker for the insights feed: a LightGBM model on user and report features, trained in Python and served with FastAPI on Kubernetes.
+  \item Moved model training to scheduled Airflow jobs with MLflow tracking, so every model in production can be traced to its data and code.
+  \item Ran A/B tests on the feed ranker; the second version raised click-through on recommended reports from 6.1\% to 7.4\%.
+  \item Responsible for monitoring model drift and retraining.
+  \item Worked on an embedding-based ``similar reports'' feature using sentence-transformers and FAISS.
+\end{itemize}
+
+\role{Brightpath Fintech}{Pune}{Data Science Intern}{Jan 2021 -- Jun 2021}
+\begin{itemize}
+  \item Helped build a credit-risk scorecard in Python and SQL for small-business loans.
+\end{itemize}
+
+\section{Education}
+\role{National Institute of Technology, Surathkal}{}{B.Tech in Computer Science and Engineering}{2017 -- 2021}
+
+\section{Skills}
+\textbf{Languages:} Python, SQL, Java \\
+\textbf{ML:} PyTorch, scikit-learn, LightGBM, sentence-transformers, FAISS \\
+\textbf{Infrastructure:} Docker, Kubernetes, Airflow, MLflow, FastAPI, AWS
+
+\end{document}

@@ -1,0 +1,44 @@
+{
+  "skill_name": "resume-jd-tuner",
+  "notes": "Fictional candidates. Paths in 'files' are relative to this evals/ folder. Eval 1 uses a live posting link, which will close one day; replace it with any open data scientist or data analyst posting on Greenhouse or Lever. Its expectations don't depend on the specific job.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "data-scientist-from-link",
+      "prompt": "Tailor my resume for this job: https://job-boards.greenhouse.io/greenhouse/jobs/8017323 . My resume is files/data-scientist/Jordan_Lee_Resume.pdf and files/data-scientist/notes.md has more detail on my work. How well do I fit?",
+      "expected_output": "Fetches the posting (or retries once through the Greenhouse or Lever API, or asks for the pasted text). Keeps the Toronto location and records any eligibility rules in the report. Replaces the buzzword summary, uses the notes (leadership presentation, A/B test, code reviews) to fill the page, and claims no tool the notes say Jordan never used (Redshift, BigQuery, dbt, Spark). One full page with a clean text layer (no Symbol-font bullet characters) and a clickable email and LinkedIn link, plus a fit report with all six sections.",
+      "files": [
+        "files/data-scientist/Jordan_Lee_Resume.pdf",
+        "files/data-scientist/notes.md"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "marketing-pasted-docx",
+      "prompt": "Can you tune my CV for this role and tell me honestly how well I fit? My CV is files/marketing/Sofia_Martins_CV.docx. Here's the job description I copied from their site:\n\nGrowth Marketing Manager\nNorthlight Apps · Amsterdam, Netherlands (hybrid, three days a week in our Amsterdam office)\n\nAbout Northlight\nNorthlight builds Wander, a trip-planning app used by 3 million travellers across Europe. We are a team of 120 and we believe great travel should be effortless, delightful and accessible to everyone.\n\nThe role\nYou will own paid acquisition and lifecycle marketing for Wander in our five core markets. You will plan and spend a yearly budget of more than €500K, run the experimentation programme across channels, and work closely with product and data to grow activated users profitably. You will report to the Head of Growth.\n\nWhat you'll do\n- Plan, launch and optimise paid campaigns on Meta Ads, TikTok Ads and Google Ads (including App campaigns)\n- Own the creative testing roadmap with our in-house designers\n- Run A/B tests across ads, app store pages and onboarding, and turn the results into decisions\n- Build and improve lifecycle journeys (push, email, in-app) in Braze\n- Report weekly on CAC, ROAS and payback using GA4 and Amplitude\n- Work with the product and data teams on attribution and event tracking\n\nWhat we're looking for\n- 4+ years in performance or growth marketing, ideally for consumer mobile apps\n- Hands-on experience with Meta Ads and Google Ads; TikTok Ads is a strong plus\n- Experience owning a significant budget and reporting on ROAS and CAC\n- A track record of structured experimentation (A/B testing)\n- Comfortable with GA4 and a product analytics tool such as Amplitude or Mixpanel\n- Basic SQL to pull your own data\n- Fluent English; Dutch is a plus\n\nNice to have\n- App store optimisation (ASO)\n- Lifecycle marketing experience with Braze or a similar tool\n- Experience in travel or marketplaces\n\nWhat we offer\n- Salary €70,000 to €85,000 plus equity\n- Relocation support and a 30% ruling application where eligible\n- 28 days of holiday and a yearly travel budget\n\nNorthlight is an equal opportunity employer. We welcome applicants of every background.\n",
+      "expected_output": "Reads the DOCX, warns that contact details sit only in the Word header and skills in a table, moves contact details into the body, British spelling, A4, no TikTok/Braze/Amplitude claims (gaps), no relocation sentence without confirmation (listed under To confirm), one full page, fit report with all six sections.",
+      "files": [
+        "files/marketing/Sofia_Martins_CV.docx"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ml-engineer-latex",
+      "prompt": "Here's my LaTeX resume: files/ml-engineer/resume.tex. Tune it for the job in files/ml-engineer/job.txt and keep my template.",
+      "expected_output": "Edits a copy of the .tex (template kept), adds the ATS-safety lines so 'Machine Learning Engineer working' no longer glues, no Spark or Triton claims, compiles to one full page, delivers .tex and .pdf plus a fit report with all six sections.",
+      "files": [
+        "files/ml-engineer/resume.tex",
+        "files/ml-engineer/job.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "linkedin-link-fails",
+      "prompt": "Tune my resume for this job: https://www.linkedin.com/jobs/view/4012345678/ . My resume is files/data-scientist/Jordan_Lee_Resume.pdf.",
+      "expected_output": "The fetch fails (LinkedIn blocks automated access). The skill does not retry through workarounds, does not invent a posting, produces no résumé, and asks the user to paste the full posting in one short message.",
+      "files": [
+        "files/data-scientist/Jordan_Lee_Resume.pdf"
+      ]
+    }
+  ]
+}

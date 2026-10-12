@@ -1,0 +1,31 @@
+Senior Data Scientist, Product Analytics
+
+About Tallowbrook
+Tallowbrook makes scheduling and payroll software for 40,000 restaurants, clinics and shops across Canada and the US. Our product teams ship every week, and data decides what we build next.
+
+The role
+You will be the senior data scientist embedded with our Retention product group. You will find out why customers stay or leave, design and read experiments, and turn product data into decisions our leadership team acts on.
+
+What you'll do
+- Own the analysis of activation, retention and expansion for the Retention group
+- Design, run and analyse A/B tests with product managers and engineers
+- Build predictive models (churn, expansion) that customer-facing teams use every week
+- Work with product and engineering to define event tracking before features ship
+- Build and maintain data pipelines and models in our warehouse with SQL, Python and Airflow
+- Present findings and recommendations to directors and the executive team
+- Mentor analysts and review their SQL and Python
+
+What we're looking for
+- 4+ years in data science or product analytics, ideally at a B2B SaaS company
+- Strong SQL and Python (pandas, scikit-learn or statsmodels)
+- Hands-on experience designing and analysing A/B tests
+- Experience building churn or propensity models that a business team used
+- Experience with a cloud data warehouse (Snowflake, BigQuery or Redshift)
+- Version control with Git and good code review habits
+- Clear communication with non-technical leaders
+
+Nice to have
+- Survival analysis or causal inference
+- dbt
+- Experience with Segment, Amplitude or Mixpanel
+- Experience in HR, payroll or workforce software

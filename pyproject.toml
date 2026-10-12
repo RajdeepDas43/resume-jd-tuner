@@ -1,0 +1,13 @@
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["conftest", "coverage", "extract_text", "pdf_checks", "relevance_score",
+                     "render_resume_pdf", "resume_text", "scoreboard", "slop_scan"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,21 @@
+{
+  "grades": [
+    {"id": "M1", "grade": "clear", "evidence": "Backend engineer with six years of experience building payment and order services in Go and Python."},
+    {"id": "M2", "grade": "clear", "evidence": "Split the order monolith into four Go services on Kubernetes."},
+    {"id": "M3", "grade": "clear", "evidence": "Rebuilt refunds as an idempotent workflow on PostgreSQL"},
+    {"id": "M4", "grade": "clear", "evidence": "Go services on Kubernetes; right-sized about 200 EC2 workloads"},
+    {"id": "M5", "grade": "clear", "evidence": "I own the checkout and refunds services"},
+    {"id": "M6", "grade": "none", "evidence": "Terraform appears only in Skills and the candidate has not written it"},
+    {"id": "N1", "grade": "clear", "evidence": "Moved the notification service from cron batches to Kafka streams"},
+    {"id": "N2", "grade": "none", "evidence": "No PCI work shown"},
+    {"id": "R1", "grade": "clear", "evidence": "Rebuilt refunds as an idempotent workflow after duplicate refunds hit two holiday sales"},
+    {"id": "R2", "grade": "weak", "evidence": "'from design reviews to on-call' in the summary, no incident story"},
+    {"id": "R3", "grade": "clear", "evidence": "Releases went from weekly to several a day"}
+  ],
+  "risks": [
+    {"claim": "Checkout p99 latency fell from 2.1 s to 1.2 s", "question": "How did you measure p99, and what made the difference?", "risk": "low", "prep": "Name the dashboard, the traffic window and the two changes that mattered most."},
+    {"claim": "Duplicates dropped to zero over the next two quarters", "question": "How did you make refunds idempotent, and how do you know duplicates stopped?", "risk": "medium", "prep": "Walk through the idempotency key, the retry path and the reconciliation report you checked."},
+    {"claim": "Terraform in Skills", "question": "Tell me about a Terraform module you wrote.", "risk": "high", "prep": "Remove it from Skills, or say plainly that you read and review Terraform but have not written modules."}
+  ],
+  "recruiter": {"shortlist": "yes", "slop_score": 8, "notes": "Concrete payments work; Terraform gap is visible."}
+}

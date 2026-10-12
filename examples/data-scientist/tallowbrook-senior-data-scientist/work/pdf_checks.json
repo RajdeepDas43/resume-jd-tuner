@@ -1,0 +1,66 @@
+{
+  "pdf": "Jordan_Lee_Senior_Data_Scientist.pdf",
+  "fails": [],
+  "warnings": [],
+  "fill": {
+    "pages": 1,
+    "expected_pages": 1,
+    "engine": "pdfminer",
+    "page_height_pt": 792.0,
+    "bottom_margin_estimate_pt": 49.3,
+    "lowest_text_pt": 53.2,
+    "line_pitch_pt": 13.9,
+    "free_space_pt": 4.0,
+    "free_lines": 0,
+    "fill_percent": 99.4,
+    "footer": null,
+    "status": "FULL",
+    "message": "the page is full"
+  },
+  "readers": [
+    "pdftotext",
+    "pypdf"
+  ],
+  "garbled_characters": {
+    "pdftotext": 0,
+    "pypdf": 0
+  },
+  "ligatures": 0,
+  "reader_agreement": 1.0,
+  "fonts": [
+    {
+      "name": "AAAAAA+LiberationSerif-Bold",
+      "type": "TrueType",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "name": "AAAAAA+LiberationSerif",
+      "type": "TrueType",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "name": "AAAAAA+LiberationSerif-Italic",
+      "type": "TrueType",
+      "embedded": true,
+      "unicode": true
+    }
+  ],
+  "headers": {
+    "summary": true,
+    "experience": true,
+    "education": true,
+    "skills": true
+  },
+  "email_found": true,
+  "phone_found": true,
+  "links": [
+    "mailto:jordan.lee.data@example.com",
+    "https://linkedin.com/in/jordan-lee-data-example"
+  ],
+  "glued_words": {},
+  "lost_words": {},
+  "detached_dates": [],
+  "verdict": "PASS"
+}

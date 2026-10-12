@@ -1,0 +1,4 @@
+# Runtime dependencies of the skill's scripts
+reportlab>=4.0
+pypdf>=4.0
+pdfminer.six>=20221105

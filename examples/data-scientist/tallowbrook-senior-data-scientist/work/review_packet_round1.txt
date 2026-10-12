@@ -1,0 +1,169 @@
+THE JOB POSTING
+Senior Data Scientist, Product Analytics
+
+About Tallowbrook
+Tallowbrook makes scheduling and payroll software for 40,000 restaurants, clinics and shops across Canada and the US. Our product teams ship every week, and data decides what we build next.
+
+The role
+You will be the senior data scientist embedded with our Retention product group. You will find out why customers stay or leave, design and read experiments, and turn product data into decisions our leadership team acts on.
+
+What you'll do
+- Own the analysis of activation, retention and expansion for the Retention group
+- Design, run and analyse A/B tests with product managers and engineers
+- Build predictive models (churn, expansion) that customer-facing teams use every week
+- Work with product and engineering to define event tracking before features ship
+- Build and maintain data pipelines and models in our warehouse with SQL, Python and Airflow
+- Present findings and recommendations to directors and the executive team
+- Mentor analysts and review their SQL and Python
+
+What we're looking for
+- 4+ years in data science or product analytics, ideally at a B2B SaaS company
+- Strong SQL and Python (pandas, scikit-learn or statsmodels)
+- Hands-on experience designing and analysing A/B tests
+- Experience building churn or propensity models that a business team used
+- Experience with a cloud data warehouse (Snowflake, BigQuery or Redshift)
+- Version control with Git and good code review habits
+- Clear communication with non-technical leaders
+
+Nice to have
+- Survival analysis or causal inference
+- dbt
+- Experience with Segment, Amplitude or Mixpanel
+- Experience in HR, payroll or workforce software
+
+
+THE RÉSUMÉ (text from the compiled PDF, one line per bullet)
+Jordan Lee
+Toronto, ON • jordan.lee.data@example.com • +1 416 555 0187 • linkedin.com/in/jordan-lee-data-example
+SUMMARY
+Product data analyst with seven years in analytics, the last four and a half with a B2B SaaS payroll and time-tracking company whose customers have 5 to 200 employees. I build the churn model and account health score that Customer Success works from and design A/B tests with the product team. Every quarter I present a retention review to the VP of Product.
+EXPERIENCE
+Clearwater Payroll
+Toronto, ON
+Product Data Analyst
+Mar 2022 – Present
+• Built the churn model in Python (pandas, scikit-learn) that scores all 38,000 active accounts every night and flags those likely to cancel within 60 days. Customer Success calls the top 200 each month, and in a held-out quarter about 42% of those accounts cancelled, against a 6% base rate.
+• Analysed retention for the time-tracking add-on. Accounts that connected their scheduling tool in week one kept 81% at 90 days, against 63% for those that did not, so the new onboarding checklist was built to push that step.
+• Designed and analysed an A/B test of a new onboarding checklist with the onboarding product manager and an engineer. About 4,000 new accounts were split 50/50 over six weeks, a sample sized for a 4-point lift, and week-one activation rose from 41% to 47%.
+• Ran two smaller A/B tests on the pricing page. Neither showed a clear difference.
+• Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. The time-tracking add-on's pricing was changed afterwards.
+• Analysed seat growth among accounts that added the time-tracking add-on for the 2024 pricing review.
+• Built the account health score for Customer Success from weighted product-usage signals. An Airflow job refreshes it daily and Tableau shows it.
+• Built and maintained the product team's Tableau dashboards.
+• Replaced spreadsheets the finance team updated by hand with SQL transformations in Snowflake, scheduled in Airflow, on tables that include about 2 billion time-punch events. Wrote the data dictionary for the 60 core Snowflake tables.
+• Defined Segment event tracking with product managers for new features before launch.
+• Fitted a Cox survival model (lifelines) for the churn work, then taught a junior analyst survival analysis and reviewed her extension of the model to add-on accounts.
+• Reviewed about five GitHub pull requests a week from the team's two other analysts. All analytics SQL and Python at Clearwater lives in Git.
+Maple Ridge Credit Union
+Toronto, ON
+Business Intelligence Analyst
+Jun 2019 – Feb 2022
+• Automated the weekly loan-pipeline report with SQL and Power BI. Preparation time fell from about six hours to under one.
+• Supported the lending team's monthly reporting in SQL Server and Excel.
+SKILLS
+Languages: SQL, Python (pandas, scikit-learn, statsmodels, lifelines)
+Data tools: Snowflake, Airflow, Segment, Tableau, Power BI, SQL Server, Excel
+Methods: A/B tests, churn models, survival analysis (Kaplan-Meier, Cox)
+Workflow: Git, GitHub pull requests
+EDUCATION
+University of Waterloo
+B.Sc. Statistics
+2015 – 2019
+
+CONSTRAINTS
+- Never add a fact, number, tool or skill. Suggest only cuts, reorders and rewordings.
+- Space: about 2 free lines at the bottom of the page; anything longer must be paid for by a cut.
+- Fixed lines that must stay word for word: none (no conventions file).
+- Location: "Toronto, ON", as on the candidate's own résumé; the job is in Toronto.
+- The target company's name appears only inside product names (it does not appear at all).
+- Spelling: Canadian/British ("Analysed"), as on the candidate's own résumé.
+
+[Fact-checker only] SOURCES
+THE BASE RÉSUMÉ (text extracted from the candidate's PDF)
+JORDAN LEE
+Toronto, ON | jordan.lee.data@example.com | +1 416 555 0187 | linkedin.com/in/jordan-lee-data-example
+
+PROFESSIONAL SUMMARY
+Results-driven data professional with 6+ years of experience leveraging data to drive business decisions. Passionate
+about turning complex datasets into actionable insights for cross-functional stakeholders.
+
+EXPERIENCE
+Clearwater Payroll, Toronto, ON
+Product Data Analyst | Mar 2022 – Present
+
+
+
+
+Responsible for building and maintaining Tableau dashboards for the product team.
+Built a churn model in Python (pandas, scikit-learn) that flags small-business accounts likely to cancel in the next
+60 days; customer success now calls the top 200 accounts each month.
+ Analysed retention for the time-tracking add-on and found that accounts which connected their scheduling tool
+in week one retained 18 points better at 90 days. The onboarding flow was changed to prompt that step.
+ Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team
+updated by hand.
+ Worked with product managers to define event tracking (Segment) for new features before launch.
+ Presented the quarterly retention review to the VP of Product.
+Maple Ridge Credit Union, Toronto, ON
+Business Intelligence Analyst | Jun 2019 – Feb 2022
+
+
+
+
+
+Helped with monthly reporting for the lending team using SQL Server and Excel.
+Automated the weekly loan-pipeline report with SQL and Power BI, cutting preparation time from about six hours
+to under one.
+Assisted in a data quality project for member records.
+
+EDUCATION
+University of Waterloo, B.Sc. Statistics, 2015 – 2019
+
+SKILLS
+SQL, Python, R, Tableau, Power BI, Excel, Snowflake, Airflow, Git, Segment, Jira, Confluence, Agile, Communication,
+Leadership
+
+
+
+THE CANDIDATE'S NOTES (notes.md)
+# Work notes (Jordan Lee)
+
+Things I've done that aren't all on my résumé. All true; numbers are from our dashboards.
+
+- All analytics SQL and Python at Clearwater goes through GitHub pull requests. I review about five a week for the two other analysts.
+- Mentored a junior analyst on survival analysis for the churn work (Kaplan-Meier curves, a Cox model in the lifelines library).
+- Ran an A/B test on the onboarding checklist: about 4,000 new accounts over six weeks. The variant raised week-one activation from 41% to 47%.
+- Built the "account health" score that Customer Success uses: weighted product-usage signals, refreshed daily by an Airflow job, shown in Tableau.
+- Wrote a data dictionary for the 60 core tables in Snowflake.
+- Our customers are small businesses with 5 to 200 employees (B2B payroll and time-tracking software).
+- Presented churn drivers to the leadership team (CEO, CFO, VP Product) at the 2024 planning offsite. The time-tracking add-on's pricing was changed afterwards.
+- Never used: Redshift, BigQuery, dbt, Spark.
+
+
+THE CANDIDATE'S ANSWERS IN THIS CONVERSATION (answers.md)
+# Jordan's answers to the skill's questions (step 4)
+
+Fictional, written for this example to show the interactive path.
+
+1. Did you design the onboarding-checklist A/B test? How was it set up, and with whom?
+   Yes. I designed it with the onboarding product manager and one engineer: a 50/50 split by account, sized with a power calculation for a 4-point lift, with week-one activation as the decision metric. I've also run two smaller pricing-page tests; both were inconclusive.
+2. Did the test come out of your add-on retention analysis?
+   Yes, the checklist was built to push the week-one scheduling connection.
+3. Did you fit the survival models yourself?
+   I fitted the Cox model myself first. The junior analyst then extended it to the add-on segment, and I reviewed her work.
+4. How did you validate the churn model?
+   On a held-out quarter: about 42% of the top 200 flagged accounts cancelled, against a 6% base churn rate. We never ran a controlled test of the Customer Success calls.
+5. Is Clearwater's product SaaS?
+   Yes, subscription software billed monthly per employee.
+6. Any expansion analysis?
+   I analysed seat growth for accounts that added the time-tracking add-on. It went into the deck for the 2024 pricing review. No upsell model.
+7. Have you used statsmodels?
+   Yes, for logistic regression and t-tests.
+8. What was the 18-point retention gap compared against?
+   Add-on accounts that did not connect their scheduling tool in week one: 81% against 63% at 90 days.
+
+# Second batch (step 7: the page still had about three free lines)
+
+9. How large are the tables behind your SQL work?
+   The time-punch events table in Snowflake holds about 2 billion rows.
+10. How often does the churn model run, and on how many accounts?
+   Every night, on all 38,000 active accounts.

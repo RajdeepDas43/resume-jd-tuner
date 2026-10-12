@@ -1,0 +1,37 @@
+Growth Marketing Manager
+Northlight Apps · Amsterdam, Netherlands (hybrid, three days a week in our Amsterdam office)
+
+About Northlight
+Northlight builds Wander, a trip-planning app used by 3 million travellers across Europe. We are a team of 120 and we believe great travel should be effortless, delightful and accessible to everyone.
+
+The role
+You will own paid acquisition and lifecycle marketing for Wander in our five core markets. You will plan and spend a yearly budget of more than €500K, run the experimentation programme across channels, and work closely with product and data to grow activated users profitably. You will report to the Head of Growth.
+
+What you'll do
+- Plan, launch and optimise paid campaigns on Meta Ads, TikTok Ads and Google Ads (including App campaigns)
+- Own the creative testing roadmap with our in-house designers
+- Run A/B tests across ads, app store pages and onboarding, and turn the results into decisions
+- Build and improve lifecycle journeys (push, email, in-app) in Braze
+- Report weekly on CAC, ROAS and payback using GA4 and Amplitude
+- Work with the product and data teams on attribution and event tracking
+
+What we're looking for
+- 4+ years in performance or growth marketing, ideally for consumer mobile apps
+- Hands-on experience with Meta Ads and Google Ads; TikTok Ads is a strong plus
+- Experience owning a significant budget and reporting on ROAS and CAC
+- A track record of structured experimentation (A/B testing)
+- Comfortable with GA4 and a product analytics tool such as Amplitude or Mixpanel
+- Basic SQL to pull your own data
+- Fluent English; Dutch is a plus
+
+Nice to have
+- App store optimisation (ASO)
+- Lifecycle marketing experience with Braze or a similar tool
+- Experience in travel or marketplaces
+
+What we offer
+- Salary €70,000 to €85,000 plus equity
+- Relocation support and a 30% ruling application where eligible
+- 28 days of holiday and a yearly travel budget
+
+Northlight is an equal opportunity employer. We welcome applicants of every background.

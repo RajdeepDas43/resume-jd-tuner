@@ -1,0 +1,104 @@
+{
+  "grades": [
+    {
+      "id": "M1",
+      "grade": "clear",
+      "evidence": "Product Data Analyst, Mar 2022 - Present, plus BI Analyst 2019-2022"
+    },
+    {
+      "id": "M2",
+      "grade": "clear",
+      "evidence": "Wrote and scheduled SQL transformations in Snowflake with Airflow"
+    },
+    {
+      "id": "M3",
+      "grade": "clear",
+      "evidence": "Built a churn model in Python (pandas, scikit-learn)"
+    },
+    {
+      "id": "M4",
+      "grade": "none",
+      "evidence": "No A/B test on the page (notes and answers have one)"
+    },
+    {
+      "id": "M5",
+      "grade": "clear",
+      "evidence": "churn model ... customer success now calls the top 200 accounts each month"
+    },
+    {
+      "id": "M6",
+      "grade": "clear",
+      "evidence": "SQL transformations in Snowflake"
+    },
+    {
+      "id": "M7",
+      "grade": "weak",
+      "evidence": "Git only in Skills"
+    },
+    {
+      "id": "M8",
+      "grade": "weak",
+      "evidence": "Presented the quarterly retention review to the VP of Product"
+    },
+    {
+      "id": "R1",
+      "grade": "weak",
+      "evidence": "Retention analysis only; no activation or expansion"
+    },
+    {
+      "id": "R2",
+      "grade": "none",
+      "evidence": "No experiments shown"
+    },
+    {
+      "id": "R3",
+      "grade": "clear",
+      "evidence": "Customer success calls the top 200 accounts each month"
+    },
+    {
+      "id": "R4",
+      "grade": "clear",
+      "evidence": "define event tracking (Segment) for new features before launch"
+    },
+    {
+      "id": "R5",
+      "grade": "clear",
+      "evidence": "SQL transformations in Snowflake with Airflow"
+    },
+    {
+      "id": "R6",
+      "grade": "weak",
+      "evidence": "VP of Product only"
+    },
+    {
+      "id": "R7",
+      "grade": "none",
+      "evidence": "No mentoring or code review shown"
+    },
+    {
+      "id": "N1",
+      "grade": "none",
+      "evidence": "Not shown (notes: mentoring on survival analysis)"
+    },
+    {
+      "id": "N2",
+      "grade": "none",
+      "evidence": "Never used dbt"
+    },
+    {
+      "id": "N3",
+      "grade": "clear",
+      "evidence": "event tracking (Segment)"
+    },
+    {
+      "id": "N4",
+      "grade": "clear",
+      "evidence": "Clearwater Payroll; time-tracking add-on"
+    },
+    {
+      "id": "N5",
+      "grade": "weak",
+      "evidence": "Payroll company implied; B2B and SaaS not stated"
+    }
+  ]
+}

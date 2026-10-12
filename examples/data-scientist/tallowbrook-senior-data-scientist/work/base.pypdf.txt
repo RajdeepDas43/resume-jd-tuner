@@ -1,0 +1,28 @@
+JORDAN LEE
+Toronto, ON | jordan.lee.data@example.com | +1 416 555 0187 | linkedin.com/in/jordan-lee-data-example
+PROFESSIONAL SUMMARY
+Results-driven data professional with 6+ years of experience leveraging data to drive business decisions. Passionate 
+about turning complex datasets into actionable insights for cross-functional stakeholders.
+EXPERIENCE
+Clearwater Payroll, Toronto, ON
+Product Data Analyst | Mar 2022 – Present
+ Responsible for building and maintaining Tableau dashboards for the product team.
+ Built a churn model in Python (pandas, scikit-learn) that flags small-business accounts likely to cancel in the next 
+60 days; customer success now calls the top 200 accounts each month.
+ Analysed retention for the time-tracking add-on and found that accounts which connected their scheduling tool 
+in week one retained 18 points better at 90 days. The onboarding flow was changed to prompt that step.
+ Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team 
+updated by hand.
+ Worked with product managers to define event tracking (Segment) for new features before launch.
+ Presented the quarterly retention review to the VP of Product.
+Maple Ridge Credit Union, Toronto, ON
+Business Intelligence Analyst | Jun 2019 – Feb 2022
+ Helped with monthly reporting for the lending team using SQL Server and Excel.
+ Automated the weekly loan-pipeline report with SQL and Power BI, cutting preparation time from about six hours 
+to under one.
+ Assisted in a data quality project for member records.
+EDUCATION
+University of Waterloo, B.Sc. Statistics, 2015 – 2019
+SKILLS
+SQL, Python, R, Tableau, Power BI, Excel, Snowflake, Airflow, Git, Segment, Jira, Confluence, Agile, Communication, 
+Leadership

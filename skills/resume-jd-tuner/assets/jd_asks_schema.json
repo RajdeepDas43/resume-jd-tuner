@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Decoded job posting (work/jd_asks.json)",
+  "type": "object",
+  "required": [
+    "role",
+    "asks",
+    "hard_terms"
+  ],
+  "properties": {
+    "role": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The posted job title, exactly"
+        },
+        "title_core": {
+          "type": "string",
+          "description": "The plain job noun a recruiter would search for, e.g. 'backend engineer'"
+        },
+        "company": {
+          "type": "string"
+        },
+        "seniority": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string",
+          "description": "As the posting states it, e.g. 'London, UK (hybrid)'"
+        },
+        "work_mode": {
+          "type": "string",
+          "enum": [
+            "onsite",
+            "hybrid",
+            "remote",
+            "unknown"
+          ]
+        },
+        "source_url": {
+          "type": "string"
+        },
+        "eligibility": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Rules the candidate must meet that a résumé line can't prove: work authorisation, 'no visa sponsorship', 'must be based in Ontario', clearance, required languages. Reported, not written onto the résumé."
+        }
+      }
+    },
+    "asks": {
+      "type": "array",
+      "description": "Every requirement and responsibility, as short phrases. Usually 12-35 items.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "ask",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "M1, M2... for must-haves; N1... for nice-to-haves; R1... for responsibilities"
+          },
+          "ask": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "must",
+              "nice",
+              "role"
+            ]
+          },
+          "alts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Plain phrases a resume would use when it shows this ask (not the posting's wording)"
+          },
+          "claimable": {
+            "type": "boolean",
+            "default": true,
+            "description": "false when nothing in the candidate's sources supports it: an honest gap"
+          },
+          "note": {
+            "type": "string",
+            "description": "Why it is a gap, or what the user confirmed"
+          }
+        }
+      }
+    },
+    "hard_terms": {
+      "type": "array",
+      "description": "Exact names an ATS keyword search would use: tools, languages, platforms, products, methods with proper names, certifications, licences, degrees.",
+      "items": {
+        "type": "object",
+        "required": [
+          "term",
+          "type"
+        ],
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "Spelled exactly as the posting spells it"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "must",
+              "nice"
+            ]
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Other spellings of the same thing, e.g. 'K8s' for 'Kubernetes'"
+          },
+          "claimable": {
+            "type": "boolean",
+            "default": true
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Other tools that meet the same requirement ('TensorFlow' for 'PyTorch or TensorFlow'). Any one counts as present."
+          }
+        }
+      }
+    },
+    "do_not_echo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Posting prose that must not be copied into the resume: mission lines, adjectives, stock phrases"
+    }
+  }
+}

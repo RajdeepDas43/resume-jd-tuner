@@ -1,0 +1,110 @@
+{
+  "warnings": [],
+  "fit_after": {
+    "score": 98,
+    "band": "Strong",
+    "cap": null,
+    "musts_clear": 8,
+    "musts": 8,
+    "musts_unmet": []
+  },
+  "fit_before": {
+    "score": 63,
+    "band": "Fair",
+    "cap": null,
+    "musts_clear": 5,
+    "musts": 8,
+    "musts_unmet": [
+      "Hands-on design and analysis of A/B tests"
+    ]
+  },
+  "ats_after": {
+    "ats_alignment": 94.7,
+    "honest_ceiling": 94.7,
+    "must_terms_present": [
+      7,
+      7
+    ],
+    "nice_terms_present": [
+      4,
+      5
+    ],
+    "claimable_terms_missing": [],
+    "unclaimable_terms_present": [],
+    "terms_only_in_skills": [],
+    "asks_found": {
+      "must": [
+        8,
+        8
+      ],
+      "role": [
+        7,
+        7
+      ],
+      "nice": [
+        4,
+        5
+      ]
+    }
+  },
+  "ats_before": {
+    "ats_alignment": 73.7,
+    "honest_ceiling": 94.7,
+    "must_terms_present": [
+      6,
+      7
+    ],
+    "nice_terms_present": [
+      2,
+      5
+    ],
+    "claimable_terms_missing": [
+      "A/B tests",
+      "survival analysis / causal inference",
+      "B2B SaaS"
+    ],
+    "unclaimable_terms_present": [],
+    "terms_only_in_skills": [
+      "Git"
+    ],
+    "asks_found": {
+      "must": [
+        6,
+        8
+      ],
+      "role": [
+        3,
+        7
+      ],
+      "nice": [
+        2,
+        5
+      ]
+    }
+  },
+  "keywords_after": 51.3,
+  "keywords_before": 32.8,
+  "interview_risk": {
+    "level": "Medium",
+    "counts": {
+      "high": 0,
+      "medium": 6,
+      "low": 1
+    }
+  },
+  "recruiter": {
+    "shortlist": "yes",
+    "slop_score": 8,
+    "notes": "Near-exact domain and skills match backed by specific numbers; the main risks are the analyst title missing every 'data scientist' search and a few lines that echo the posting."
+  },
+  "pdf_checks": {
+    "verdict": "PASS",
+    "fails": [],
+    "fill": "FULL",
+    "free_lines": 0
+  },
+  "slop": {
+    "verdict": "PASS",
+    "line": "SLOP GATES: PASS"
+  }
+}

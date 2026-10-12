@@ -1,0 +1,314 @@
+{
+  "summary": {
+    "ats_alignment": 94.7,
+    "honest_ceiling": 94.7,
+    "must_terms_present": [
+      7,
+      7
+    ],
+    "nice_terms_present": [
+      4,
+      5
+    ],
+    "claimable_terms_missing": [],
+    "unclaimable_terms_present": [],
+    "terms_only_in_skills": [],
+    "asks_found": {
+      "must": [
+        8,
+        8
+      ],
+      "role": [
+        7,
+        7
+      ],
+      "nice": [
+        4,
+        5
+      ]
+    }
+  },
+  "hard_terms": [
+    {
+      "term": "SQL",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "SQL",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "Python",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "Python",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "pandas / scikit-learn / statsmodels",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "pandas",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "A/B tests",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "A/B tests",
+      "other_spelling": null,
+      "where": [
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "churn / propensity",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "churn",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "Snowflake / BigQuery / Redshift",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "Snowflake",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "Git",
+      "type": "must",
+      "claimable": true,
+      "present": true,
+      "matched": "Git",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "Airflow",
+      "type": "nice",
+      "claimable": true,
+      "present": true,
+      "matched": "Airflow",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "survival analysis / causal inference",
+      "type": "nice",
+      "claimable": true,
+      "present": true,
+      "matched": "survival analysis",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "dbt",
+      "type": "nice",
+      "claimable": false,
+      "present": false,
+      "matched": null,
+      "other_spelling": null,
+      "where": []
+    },
+    {
+      "term": "Segment / Amplitude / Mixpanel",
+      "type": "nice",
+      "claimable": true,
+      "present": true,
+      "matched": "Segment",
+      "other_spelling": null,
+      "where": [
+        "skills",
+        "experience/summary"
+      ]
+    },
+    {
+      "term": "B2B SaaS",
+      "type": "nice",
+      "claimable": true,
+      "present": true,
+      "matched": "B2B SaaS",
+      "other_spelling": null,
+      "where": [
+        "experience/summary"
+      ]
+    }
+  ],
+  "asks": [
+    {
+      "id": "M1",
+      "ask": "4+ years in data science or product analytics",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M2",
+      "ask": "Strong SQL",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M3",
+      "ask": "Strong Python with pandas, scikit-learn or statsmodels",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M4",
+      "ask": "Hands-on design and analysis of A/B tests",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M5",
+      "ask": "Built churn or propensity models that a business team used",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M6",
+      "ask": "Cloud data warehouse experience (Snowflake, BigQuery or Redshift)",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M7",
+      "ask": "Git version control and code review habits",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "M8",
+      "ask": "Clear communication with non-technical leaders",
+      "type": "must",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R1",
+      "ask": "Analyse activation, retention and expansion",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R2",
+      "ask": "Design, run and analyse A/B tests with product managers and engineers",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R3",
+      "ask": "Build predictive models (churn, expansion) that customer-facing teams use every week",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R4",
+      "ask": "Define event tracking with product and engineering before features ship",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R5",
+      "ask": "Build and maintain warehouse pipelines and models with SQL, Python and Airflow",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R6",
+      "ask": "Present findings and recommendations to directors and executives",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "R7",
+      "ask": "Mentor analysts and review their SQL and Python",
+      "type": "role",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "N1",
+      "ask": "Survival analysis or causal inference",
+      "type": "nice",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "N2",
+      "ask": "dbt",
+      "type": "nice",
+      "claimable": false,
+      "found": false
+    },
+    {
+      "id": "N3",
+      "ask": "Segment, Amplitude or Mixpanel",
+      "type": "nice",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "N4",
+      "ask": "HR, payroll or workforce software experience",
+      "type": "nice",
+      "claimable": true,
+      "found": true
+    },
+    {
+      "id": "N5",
+      "ask": "B2B SaaS company experience (the posting says 'ideally')",
+      "type": "nice",
+      "claimable": true,
+      "found": true
+    }
+  ]
+}

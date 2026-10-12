@@ -1,0 +1,122 @@
+THE JOB POSTING
+Senior Data Scientist, Product Analytics
+
+About Tallowbrook
+Tallowbrook makes scheduling and payroll software for 40,000 restaurants, clinics and shops across Canada and the US. Our product teams ship every week, and data decides what we build next.
+
+The role
+You will be the senior data scientist embedded with our Retention product group. You will find out why customers stay or leave, design and read experiments, and turn product data into decisions our leadership team acts on.
+
+What you'll do
+- Own the analysis of activation, retention and expansion for the Retention group
+- Design, run and analyse A/B tests with product managers and engineers
+- Build predictive models (churn, expansion) that customer-facing teams use every week
+- Work with product and engineering to define event tracking before features ship
+- Build and maintain data pipelines and models in our warehouse with SQL, Python and Airflow
+- Present findings and recommendations to directors and the executive team
+- Mentor analysts and review their SQL and Python
+
+What we're looking for
+- 4+ years in data science or product analytics, ideally at a B2B SaaS company
+- Strong SQL and Python (pandas, scikit-learn or statsmodels)
+- Hands-on experience designing and analysing A/B tests
+- Experience building churn or propensity models that a business team used
+- Experience with a cloud data warehouse (Snowflake, BigQuery or Redshift)
+- Version control with Git and good code review habits
+- Clear communication with non-technical leaders
+
+Nice to have
+- Survival analysis or causal inference
+- dbt
+- Experience with Segment, Amplitude or Mixpanel
+- Experience in HR, payroll or workforce software
+
+CONSTRAINTS
+- Never add a fact, number, tool or skill. Suggest only cuts, reorders and rewordings.
+- Space: the page is full: anything added must be paid for by a cut.
+- Fixed lines that must stay word for word: none (no conventions file).
+- Location: "Toronto, ON", as on the candidate's own résumé; the job is in Toronto.
+- The target company's name appears only inside product names (it does not appear at all).
+- Spelling: Canadian/British ("Analysed"), as on the candidate's own résumé.
+
+THE ASKS (grade every one, using these ids)
+M1 | must | 4+ years in data science or product analytics
+M2 | must | Strong SQL
+M3 | must | Strong Python with pandas, scikit-learn or statsmodels
+M4 | must | Hands-on design and analysis of A/B tests
+M5 | must | Built churn or propensity models that a business team used
+M6 | must | Cloud data warehouse experience (Snowflake, BigQuery or Redshift)
+M7 | must | Git version control and code review habits
+M8 | must | Clear communication with non-technical leaders
+R1 | role | Analyse activation, retention and expansion
+R2 | role | Design, run and analyse A/B tests with product managers and engineers
+R3 | role | Build predictive models (churn, expansion) that customer-facing teams use every week
+R4 | role | Define event tracking with product and engineering before features ship
+R5 | role | Build and maintain warehouse pipelines and models with SQL, Python and Airflow
+R6 | role | Present findings and recommendations to directors and executives
+R7 | role | Mentor analysts and review their SQL and Python
+N1 | nice | Survival analysis or causal inference
+N2 | nice | dbt
+N3 | nice | Segment, Amplitude or Mixpanel
+N4 | nice | HR, payroll or workforce software experience
+N5 | nice | B2B SaaS company experience (the posting says 'ideally')
+
+RÉSUMÉ A
+JORDAN LEE
+Toronto, ON | jordan.lee.data@example.com | +1 416 555 0187 | linkedin.com/in/jordan-lee-data-example
+PROFESSIONAL SUMMARY
+Results-driven data professional with 6+ years of experience leveraging data to drive business decisions. Passionate about turning complex datasets into actionable insights for cross-functional stakeholders.
+EXPERIENCE
+Clearwater Payroll, Toronto, ON
+Product Data Analyst | Mar 2022 – Present
+Responsible for building and maintaining Tableau dashboards for the product team.
+Built a churn model in Python (pandas, scikit-learn) that flags small-business accounts likely to cancel in the next 60 days; customer success now calls the top 200 accounts each month.
+• Analysed retention for the time-tracking add-on and found that accounts which connected their scheduling tool in week one retained 18 points better at 90 days. The onboarding flow was changed to prompt that step.
+• Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team updated by hand.
+• Worked with product managers to define event tracking (Segment) for new features before launch.
+• Presented the quarterly retention review to the VP of Product.
+Maple Ridge Credit Union, Toronto, ON
+Business Intelligence Analyst | Jun 2019 – Feb 2022
+Helped with monthly reporting for the lending team using SQL Server and Excel.
+Automated the weekly loan-pipeline report with SQL and Power BI, cutting preparation time from about six hours to under one.
+Assisted in a data quality project for member records.
+EDUCATION
+University of Waterloo, B.Sc. Statistics, 2015 – 2019
+SKILLS
+SQL, Python, R, Tableau, Power BI, Excel, Snowflake, Airflow, Git, Segment, Jira, Confluence, Agile, Communication,
+Leadership
+
+RÉSUMÉ B
+Jordan Lee
+Toronto, ON • jordan.lee.data@example.com • +1 416 555 0187 • linkedin.com/in/jordan-lee-data-example
+SUMMARY
+Product data analyst with seven years in analytics, the last four and a half in product analytics for a B2B SaaS payroll and time-tracking company whose customers have 5 to 200 employees. I build the churn model and account health score that Customer Success works from, and I run A/B tests with the product team. Every quarter I present a retention review to the VP of Product.
+EXPERIENCE
+Clearwater Payroll
+Toronto, ON
+Product Data Analyst
+Mar 2022 – Present
+• Built the Python churn model (pandas, scikit-learn) that scores all 38,000 active accounts every night and flags those likely to cancel within 60 days. In a held-out quarter, about 42% of the model's top 200 accounts cancelled, against a 6% base churn rate. Customer Success calls the top 200 each month.
+• Built the account health score for Customer Success from weighted product-usage signals. It is refreshed daily by an Airflow job and shown in Tableau.
+• Fitted a Cox survival model (lifelines) for the churn work, then mentored a junior analyst on survival analysis and reviewed her extension of the model to add-on accounts.
+• Reviewed about five GitHub pull requests a week from the team's two other analysts.
+• Analysed retention for the time-tracking add-on. Of the add-on accounts that connected their scheduling tool in week one, 81% were retained at 90 days, against 63% of those that did not. A new onboarding checklist was built to push that step.
+• Designed and ran the checklist's A/B test with the onboarding product manager and an engineer. Sized it with a power calculation to detect a 4-point lift in week-one activation, the decision metric. About 4,000 new accounts were split 50/50 over six weeks, and the variant raised activation from 41% to 47%.
+• Ran two smaller A/B tests on the pricing page. Neither showed a clear difference.
+• For the 2024 pricing review, analysed seat expansion among accounts that added the time-tracking add-on.
+• Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. The time-tracking add-on's pricing was changed afterwards.
+• Built a Snowflake and Airflow data pipeline that replaced the finance team's hand-updated spreadsheets with scheduled SQL transformations. Documented the 60 core tables in a data dictionary.
+• Worked out the Segment event tracking for new features with product managers before launch.
+Maple Ridge Credit Union
+Toronto, ON
+Business Intelligence Analyst
+Jun 2019 – Feb 2022
+• Automated the weekly loan-pipeline report with SQL and Power BI. Preparation time fell from about six hours to under one.
+SKILLS
+Languages: SQL, Python (pandas, scikit-learn, statsmodels, lifelines)
+Tools: Snowflake, Airflow, Segment, Tableau, Power BI, SQL Server, Excel, Git, GitHub
+Methods: A/B tests, churn models, survival analysis (Kaplan-Meier, Cox)
+EDUCATION
+University of Waterloo
+B.Sc. Statistics
+2015 – 2019

@@ -1,0 +1,28 @@
+Machine Learning Engineer, Search Ranking
+Quillstone · Bengaluru, India (hybrid)
+
+About us
+Quillstone runs the document search used by 4,000 legal and finance teams. Our mission is to make every answer one search away.
+
+What you will do
+- Build and improve learning-to-rank models for our search results
+- Own feature pipelines on Spark and our feature store
+- Ship models to production with low-latency serving (Triton or TorchServe on Kubernetes)
+- Design offline evaluations (NDCG, MRR) and online A/B tests
+- Partner with search infrastructure engineers on retrieval quality
+
+You should have
+- 3+ years building machine learning systems in production
+- Strong Python and SQL
+- Experience with PyTorch or TensorFlow
+- Experience with ranking, recommendation or search relevance
+- Experience running A/B tests and reading their results
+- Experience deploying models on Kubernetes
+
+Nice to have
+- Elasticsearch or OpenSearch
+- Embeddings and vector search (FAISS, Milvus)
+- MLflow or a similar experiment tracker
+- Spark
+
+Compensation: competitive salary and ESOPs. Quillstone is an equal opportunity employer.

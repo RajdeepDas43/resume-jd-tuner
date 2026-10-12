@@ -1,0 +1,77 @@
+{
+  "name": "Alex Rivera",
+  "contact": [
+    "Austin, TX",
+    "alex.rivera@example.com",
+    "+1 512 555 0142",
+    "linkedin.com/in/alex-rivera-example",
+    "github.com/alex-rivera-example"
+  ],
+  "layout": {
+    "paper": "letter",
+    "dates": "right"
+  },
+  "summary": "Backend engineer with six years of experience building payment and order services in Go and Python. I own the checkout and refunds services for a mid-size online retailer, from design reviews to on-call.",
+  "sections": [
+    {
+      "title": "Experience",
+      "entries": [
+        {
+          "org": "Larkspur Commerce",
+          "location": "Austin, TX",
+          "role": "Senior Software Engineer",
+          "dates": "Jun 2022 – Present",
+          "bullets": [
+            "Split the order monolith into four Go services on Kubernetes. Checkout p99 latency fell from 2.1 s to 1.2 s.",
+            "Rebuilt refunds as an idempotent workflow on PostgreSQL after duplicate refunds hit two holiday sales. Duplicates dropped to zero over the next two quarters.",
+            "Right-sized about 200 EC2 workloads with custom autoscaling policies, which cut the AWS bill by $340K a year.",
+            "Built the CI/CD pipeline in GitHub Actions and Argo CD for a 12-engineer team. Releases went from weekly to several a day."
+          ]
+        },
+        {
+          "org": "Tidewater Systems",
+          "location": "Dallas, TX",
+          "role": "Software Engineer",
+          "dates": "Jul 2019 – May 2022",
+          "bullets": [
+            "Moved the notification service from cron batches to Kafka streams carrying about 2M events a day.",
+            "Wrote integration tests for the 20 most-used API endpoints. Customer-reported bugs fell 30% over the next two quarters."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "entries": [
+        {
+          "org": "University of Texas at Dallas",
+          "role": "B.S. in Computer Science",
+          "dates": "2015 – 2019"
+        }
+      ]
+    }
+  ],
+  "skills_after": "Experience",
+  "skills": {
+    "Languages": [
+      "Go",
+      "Python",
+      "SQL"
+    ],
+    "Cloud and infrastructure": [
+      "AWS (EC2, Lambda, S3, RDS)",
+      "Kubernetes",
+      "Docker",
+      "Terraform"
+    ],
+    "Data and messaging": [
+      "PostgreSQL",
+      "Kafka",
+      "Redis"
+    ],
+    "CI/CD": [
+      "GitHub Actions",
+      "Argo CD"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Grades of a resume against the posting's asks (work/grades_before.json, work/grades_after.json)",
+  "type": "object",
+  "required": ["grades"],
+  "properties": {
+    "grades": {
+      "type": "array",
+      "description": "One entry per ask in jd_asks.json, using the same ids",
+      "items": {
+        "type": "object",
+        "required": ["id", "grade"],
+        "properties": {
+          "id": {"type": "string"},
+          "grade": {"type": "string", "enum": ["clear", "weak", "none"], "description": "clear: a line proves it; weak: hinted or only listed in Skills; none: not shown"},
+          "evidence": {"type": "string", "description": "The resume line that proves it, quoted, or why it is weak or missing"}
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Claims an interviewer will probe (hiring-manager agent, tuned resume only)",
+      "items": {
+        "type": "object",
+        "required": ["claim", "question", "risk"],
+        "properties": {
+          "claim": {"type": "string"},
+          "question": {"type": "string"},
+          "risk": {"type": "string", "enum": ["low", "medium", "high"], "description": "How hard it would be to back up in the room"},
+          "prep": {"type": "string", "description": "What a strong answer covers"}
+        }
+      }
+    },
+    "recruiter": {
+      "type": "object",
+      "properties": {
+        "shortlist": {"type": "string", "enum": ["yes", "maybe", "no"]},
+        "slop_score": {"type": "integer", "minimum": 1, "maximum": 10, "description": "Reads as if the candidate wrote it (10 = fully)"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

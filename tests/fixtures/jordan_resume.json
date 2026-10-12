@@ -1,0 +1,58 @@
+{
+  "name": "Jordan Lee",
+  "contact": ["Toronto, ON", "jordan.lee.data@example.com", "+1 416 555 0187", "linkedin.com/in/jordan-lee-data-example"],
+  "paper": "letter",
+  "summary": "Product data analyst with seven years in analytics. For the last four and a half years I have worked at a B2B payroll and time-tracking software company whose customers have 5 to 200 employees. I study churn and retention with Python and SQL and present the results to the product team and to company leadership.",
+  "sections": [
+    {
+      "title": "Experience",
+      "entries": [
+        {
+          "org": "Clearwater Payroll",
+          "location": "Toronto, ON",
+          "role": "Product Data Analyst",
+          "dates": "Mar 2022 – Present",
+          "bullets": [
+            "Built a churn model (Python, pandas, scikit-learn) that flags small-business accounts likely to cancel in the next 60 days. Customer Success calls the top 200 accounts on the list each month.",
+            "Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. Pricing for the time-tracking add-on changed afterwards.",
+            "Analysed retention for the time-tracking add-on and found that accounts which connected their scheduling tool in week one had 90-day retention 18 points higher. The onboarding flow was changed to prompt that step.",
+            "Ran a six-week A/B test of the onboarding checklist on about 4,000 new accounts, and the variant raised week-one activation from 41% to 47%.",
+            "Created the account health score that Customer Success uses. It combines weighted product-usage signals, and an Airflow job refreshes it daily.",
+            "Replaced the finance team's hand-updated spreadsheets with SQL transformations in Snowflake, scheduled in Airflow. Wrote a data dictionary for the 60 core tables.",
+            "Defined Segment event tracking with product managers for new features before launch.",
+            "Reviewed the other two analysts' SQL and Python in GitHub pull requests, about five a week.",
+            "Mentored a junior analyst on survival analysis of churn (Kaplan-Meier curves and a Cox model in the lifelines library).",
+            "Built and maintained Tableau dashboards for the product team and presented the quarterly retention review to the VP of Product."
+          ]
+        },
+        {
+          "org": "Maple Ridge Credit Union",
+          "location": "Toronto, ON",
+          "role": "Business Intelligence Analyst",
+          "dates": "Jun 2019 – Feb 2022",
+          "bullets": [
+            "Automated the weekly loan-pipeline report with SQL and Power BI. Preparation time fell from about six hours to under one.",
+            "Supported the lending team's monthly reporting in SQL Server and Excel."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "entries": [
+        {
+          "org": "University of Waterloo",
+          "role": "B.Sc. Statistics",
+          "dates": "2015 – 2019"
+        }
+      ]
+    }
+  ],
+  "skills_after": "Experience",
+  "skills": {
+    "Languages": ["SQL", "Python (pandas, scikit-learn, lifelines)", "R"],
+    "Data stack": ["Snowflake", "Airflow", "Segment", "Git", "GitHub"],
+    "BI and reporting": ["Tableau", "Power BI", "SQL Server", "Excel"],
+    "Statistics": ["A/B testing", "survival analysis (Kaplan-Meier, Cox)", "churn modelling"]
+  }
+}

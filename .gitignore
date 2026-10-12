@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Build output
+dist/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Eval runs (skill-creator workspaces)
+*-workspace/
+
+# Never commit real résumés or job applications to a public repo.
+# Run the skill from your own job-search folder, not inside this repository.
+/applications/
+/my-resumes/

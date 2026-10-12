@@ -1,0 +1,34 @@
+{
+  "verdict": "PASS",
+  "verdict_line": "SLOP GATES: PASS",
+  "warnings": [],
+  "prose_words": 401,
+  "bullets": 13,
+  "sentences": 26,
+  "average_sentence_words": 15.0,
+  "longest_sentence_words": 32,
+  "long_sentences": [
+    "Product data analyst with seven years in analytics, the last four and a half in product analytics for a B2B SaaS payroll and time-tracking company whose customers have 5 to 200 employees."
+  ],
+  "dashes": 0,
+  "semicolons": 0,
+  "colon_led_bullets": [],
+  "banned_words": {},
+  "ing_tails": [],
+  "weak_openers": [],
+  "not_just_but": [],
+  "repeated_openers": {},
+  "metric_tokens": [
+    "42%",
+    "6%",
+    "81%",
+    "63%",
+    "41%",
+    "47%"
+  ],
+  "repeated_metrics": [],
+  "shared_4_word_runs": [],
+  "shared_5_word_runs": [],
+  "fails": [],
+  "review": []
+}

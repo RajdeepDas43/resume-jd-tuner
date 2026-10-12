@@ -1,0 +1,14 @@
+{
+  "name": "resume-jd-tuner",
+  "displayName": "Résumé JD Tuner",
+  "version": "1.0.0",
+  "description": "Tailor a résumé to one job posting: a one-page, honest, ATS-safe résumé plus a fit report (ATS alignment, interview risk, gaps, quality check, overall fit), reviewed by AI-slop and recruiter agents.",
+  "author": {
+    "name": "Rajdeep Das",
+    "url": "https://github.com/RajdeepDas43"
+  },
+  "homepage": "https://github.com/RajdeepDas43/resume-jd-tuner",
+  "repository": "https://github.com/RajdeepDas43/resume-jd-tuner",
+  "license": "Apache-2.0",
+  "keywords": ["resume", "cv", "job-description", "ats", "job-search", "career", "skills"]
+}

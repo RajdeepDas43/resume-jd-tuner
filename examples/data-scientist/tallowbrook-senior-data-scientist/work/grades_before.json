@@ -1,0 +1,148 @@
+{
+  "grades": [
+    {
+      "id": "M1",
+      "grade": "clear",
+      "evidence": "'Product Data Analyst | Mar 2022 – Present': over four and a half years in product analytics, with Maple Ridge before it."
+    },
+    {
+      "id": "M2",
+      "grade": "clear",
+      "evidence": "'Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team updated by hand.'"
+    },
+    {
+      "id": "M3",
+      "grade": "clear",
+      "evidence": "'Built a churn model in Python (pandas, scikit-learn) that flags small-business accounts likely to cancel in the next 60 days'"
+    },
+    {
+      "id": "M4",
+      "grade": "none",
+      "evidence": "No A/B test or experiment anywhere on the page, not even in Skills."
+    },
+    {
+      "id": "M5",
+      "grade": "clear",
+      "evidence": "'Built a churn model in Python (pandas, scikit-learn)...; customer success now calls the top 200 accounts each month.'"
+    },
+    {
+      "id": "M6",
+      "grade": "clear",
+      "evidence": "'Wrote and scheduled SQL transformations in Snowflake with Airflow'"
+    },
+    {
+      "id": "M7",
+      "grade": "weak",
+      "evidence": "Git appears only in Skills; no line shows code review."
+    },
+    {
+      "id": "M8",
+      "grade": "weak",
+      "evidence": "'Presented the quarterly retention review to the VP of Product.' One product leader and no decision tied to it; 'Communication' is only a Skills label."
+    },
+    {
+      "id": "R1",
+      "grade": "weak",
+      "evidence": "'Analysed retention for the time-tracking add-on and found that accounts which connected their scheduling tool in week one retained 18 points better at 90 days.' Retention, with activation implied; no expansion."
+    },
+    {
+      "id": "R2",
+      "grade": "none",
+      "evidence": "No A/B test with product managers or engineers."
+    },
+    {
+      "id": "R3",
+      "grade": "weak",
+      "evidence": "'customer success now calls the top 200 accounts each month.' One churn model feeding a monthly call list; weekly use and expansion not shown."
+    },
+    {
+      "id": "R4",
+      "grade": "clear",
+      "evidence": "'Worked with product managers to define event tracking (Segment) for new features before launch.' Engineering not named."
+    },
+    {
+      "id": "R5",
+      "grade": "clear",
+      "evidence": "'Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team updated by hand.'"
+    },
+    {
+      "id": "R6",
+      "grade": "weak",
+      "evidence": "'Presented the quarterly retention review to the VP of Product.' One VP and findings only; no directors, executive team or recommendations."
+    },
+    {
+      "id": "R7",
+      "grade": "none",
+      "evidence": "No mentoring or review of others' code; 'Leadership' in Skills has no line behind it."
+    },
+    {
+      "id": "N1",
+      "grade": "none",
+      "evidence": "No survival or causal method; the 18-point gap is a raw comparison."
+    },
+    {
+      "id": "N2",
+      "grade": "none",
+      "evidence": "dbt not mentioned."
+    },
+    {
+      "id": "N3",
+      "grade": "clear",
+      "evidence": "'Worked with product managers to define event tracking (Segment) for new features before launch.'"
+    },
+    {
+      "id": "N4",
+      "grade": "weak",
+      "evidence": "'Clearwater Payroll' and 'time-tracking add-on' imply payroll software, but the page never says what the company sells."
+    },
+    {
+      "id": "N5",
+      "grade": "weak",
+      "evidence": "'small-business accounts likely to cancel' and an 'add-on' suggest B2B subscription software; SaaS is never stated."
+    }
+  ],
+  "risks": [
+    {
+      "claim": "Built a churn model in Python (pandas, scikit-learn) that flags small-business accounts likely to cancel in the next 60 days; customer success now calls the top 200 accounts each month.",
+      "question": "How good is the model? What share of the top 200 actually cancel, and how did you validate it?",
+      "risk": "medium",
+      "prep": "Out-of-time validation; cancellation rate in the top 200 against the base rate; recall; leakage checks; why 200 (team capacity); whether the calls save accounts, ideally measured against an uncalled holdout."
+    },
+    {
+      "claim": "accounts which connected their scheduling tool in week one retained 18 points better at 90 days. The onboarding flow was changed to prompt that step.",
+      "question": "Engaged accounts connect tools anyway. How do you know prompting the step improves retention, and was the change A/B tested?",
+      "risk": "high",
+      "prep": "Names the selection bias; what was controlled for; a test with a pre-set decision metric, a power calculation and a result; whether 90-day retention moved after the change."
+    },
+    {
+      "claim": "Skills: Leadership",
+      "question": "You list leadership. Whom have you mentored, and whose SQL and Python do you review?",
+      "risk": "high",
+      "prep": "A named mentee and what was taught; review cadence; one review comment that changed an analysis."
+    },
+    {
+      "claim": "Skills: Git",
+      "question": "How does your analysis code reach production? Do you use branches and pull requests, and who reviews your work?",
+      "risk": "medium",
+      "prep": "Branch and pull-request flow; what a review checks (join grain, leakage, tests); how Airflow DAGs and model code are versioned."
+    },
+    {
+      "claim": "Wrote and scheduled SQL transformations in Snowflake with Airflow, replacing spreadsheets the finance team updated by hand.",
+      "question": "Walk me through that pipeline. How do you test the SQL, and what happens when a run fails?",
+      "risk": "low",
+      "prep": "DAG structure; incremental versus full loads; safe reruns; data tests and alerts; who maintains it; how finance signed off on the numbers."
+    },
+    {
+      "claim": "Presented the quarterly retention review to the VP of Product.",
+      "question": "What did you recommend in the last review, and what did the VP do with it?",
+      "risk": "medium",
+      "prep": "One concrete recommendation, the evidence behind it, the decision that followed, and how it was pitched to a non-technical audience."
+    },
+    {
+      "claim": "Responsible for building and maintaining Tableau dashboards for the product team.",
+      "question": "How much of your week is dashboards versus models and experiments? This is a senior data scientist role.",
+      "risk": "medium",
+      "prep": "An honest time split; modelling and experiment work that shipped; evidence of senior scope such as designing tests and reviewing others' work."
+    }
+  ]
+}

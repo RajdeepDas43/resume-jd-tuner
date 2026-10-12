@@ -1,0 +1,54 @@
+Jordan Lee
+Toronto, ON • jordan.lee.data@example.com • +1 416 555 0187 • linkedin.com/in/jordan-lee-data-example
+
+SUMMARY
+Product data analyst with seven years in analytics, the last four and a half in product analytics for a B2B SaaS payroll
+and time-tracking company whose customers have 5 to 200 employees. I build the churn model and account health score
+that Customer Success works from, and I run A/B tests with the product team. Every quarter I present a retention review
+to the VP of Product.
+
+EXPERIENCE
+Clearwater Payroll
+Toronto, ON
+Product Data Analyst
+Mar 2022 – Present
+• Built the Python churn model (pandas, scikit-learn) that scores all 38,000 active accounts every night and flags those
+likely to cancel within 60 days. In a held-out quarter, about 42% of the model's top 200 accounts cancelled, against a
+6% base churn rate. Customer Success calls the top 200 each month.
+• Built the account health score for Customer Success from weighted product-usage signals. It is refreshed daily by an
+Airflow job and shown in Tableau.
+• Fitted a Cox survival model for the churn work, then mentored a junior analyst on survival analysis and reviewed her
+extension of the model to add-on accounts.
+• Reviewed about five GitHub pull requests a week from the team's two other analysts.
+• Analysed retention for the time-tracking add-on. Of the add-on accounts that connected their scheduling tool in week
+one, 81% were retained at 90 days, against 63% of those that did not. A new onboarding checklist was built to push
+that step.
+• Designed and ran the checklist's A/B test with the onboarding product manager and an engineer. Sized it with a
+power calculation to detect a 4-point lift in week-one activation, the decision metric. About 4,000 new accounts were
+split 50/50 over six weeks, and the variant raised activation from 41% to 47%.
+• Ran two smaller A/B tests on the pricing page. Neither showed a clear difference.
+• For the 2024 pricing review, analysed seat expansion among accounts that added the time-tracking add-on.
+• Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. The time-tracking add-on's
+pricing was changed afterwards.
+• Built a Snowflake and Airflow data pipeline that replaced the finance team's hand-updated spreadsheets with
+scheduled SQL transformations. Wrote a data dictionary for the 60 core Snowflake tables.
+• Worked out the Segment event tracking for new features with product managers before launch.
+Maple Ridge Credit Union
+Toronto, ON
+Business Intelligence Analyst
+Jun 2019 – Feb 2022
+• Automated the weekly loan-pipeline report with SQL and Power BI. Preparation time fell from about six hours to
+under one.
+
+SKILLS
+Languages: SQL, Python (pandas, scikit-learn, statsmodels, lifelines)
+Tools: Snowflake, Airflow, Segment, Tableau, Power BI, SQL Server, Excel, Git, GitHub
+Methods: A/B testing, churn models, survival analysis (Kaplan-Meier, Cox)
+
+EDUCATION
+University of Waterloo
+B.Sc. Statistics
+
+2015 – 2019
+
+

@@ -1,0 +1,180 @@
+{
+  "role": {
+    "title": "Senior Backend Engineer, Payments",
+    "title_core": "backend engineer",
+    "company": "Harborline Payments",
+    "seniority": "Senior",
+    "location": "Austin, TX (hybrid)",
+    "work_mode": "hybrid",
+    "source_url": "https://jobs.example.com/harborline/senior-backend-engineer-payments",
+    "eligibility": [
+      "Authorised to work in the US; no visa sponsorship"
+    ]
+  },
+  "asks": [
+    {
+      "id": "M1",
+      "ask": "5+ years building backend services",
+      "type": "must",
+      "alts": [
+        "backend engineer",
+        "six years",
+        "payment services"
+      ]
+    },
+    {
+      "id": "M2",
+      "ask": "Production experience with Go or Java",
+      "type": "must",
+      "alts": [
+        "Go services",
+        "services in Go",
+        "Java services"
+      ]
+    },
+    {
+      "id": "M3",
+      "ask": "Relational databases, PostgreSQL preferred",
+      "type": "must",
+      "alts": [
+        "PostgreSQL",
+        "Postgres"
+      ]
+    },
+    {
+      "id": "M4",
+      "ask": "Run services on Kubernetes in a cloud",
+      "type": "must",
+      "alts": [
+        "on Kubernetes",
+        "EKS",
+        "Kubernetes cluster"
+      ]
+    },
+    {
+      "id": "M5",
+      "ask": "Payments or money-movement systems",
+      "type": "must",
+      "alts": [
+        "payment services",
+        "refunds",
+        "checkout"
+      ]
+    },
+    {
+      "id": "M6",
+      "ask": "Infrastructure as code with Terraform",
+      "type": "must",
+      "alts": [
+        "Terraform"
+      ],
+      "claimable": false,
+      "note": "listed in skills on the base resume but the candidate says they only read Terraform, never wrote modules"
+    },
+    {
+      "id": "N1",
+      "ask": "Event streaming with Kafka",
+      "type": "nice",
+      "alts": [
+        "Kafka streams",
+        "Kafka"
+      ]
+    },
+    {
+      "id": "N2",
+      "ask": "PCI DSS experience",
+      "type": "nice",
+      "alts": [
+        "PCI DSS",
+        "PCI compliance"
+      ],
+      "claimable": false
+    },
+    {
+      "id": "R1",
+      "ask": "Design idempotent, fault-tolerant payment flows",
+      "type": "role",
+      "alts": [
+        "idempotent",
+        "duplicate refunds",
+        "retry logic"
+      ]
+    },
+    {
+      "id": "R2",
+      "ask": "Own services in production, including on-call",
+      "type": "role",
+      "alts": [
+        "on-call",
+        "incident review",
+        "own the checkout"
+      ]
+    },
+    {
+      "id": "R3",
+      "ask": "Improve deploy speed and reliability",
+      "type": "role",
+      "alts": [
+        "CI/CD pipeline",
+        "release frequency",
+        "releases went from"
+      ]
+    }
+  ],
+  "hard_terms": [
+    {
+      "term": "Go",
+      "type": "must",
+      "variants": [
+        "Golang"
+      ],
+      "alternatives": [
+        "Java"
+      ]
+    },
+    {
+      "term": "PostgreSQL",
+      "type": "must",
+      "variants": [
+        "Postgres"
+      ]
+    },
+    {
+      "term": "Kubernetes",
+      "type": "must",
+      "variants": [
+        "K8s"
+      ]
+    },
+    {
+      "term": "AWS",
+      "type": "must"
+    },
+    {
+      "term": "Terraform",
+      "type": "must",
+      "claimable": false
+    },
+    {
+      "term": "Kafka",
+      "type": "nice"
+    },
+    {
+      "term": "PCI DSS",
+      "type": "nice",
+      "claimable": false
+    },
+    {
+      "term": "gRPC",
+      "type": "nice",
+      "claimable": false
+    }
+  ],
+  "do_not_echo": [
+    "move money at the speed of the internet",
+    "world-class",
+    "fast-paced",
+    "ownership mindset",
+    "thrive in ambiguity"
+  ]
+}

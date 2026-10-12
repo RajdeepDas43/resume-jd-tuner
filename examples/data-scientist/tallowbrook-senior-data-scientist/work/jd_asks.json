@@ -1,0 +1,389 @@
+{
+  "role": {
+    "title": "Senior Data Scientist, Product Analytics",
+    "title_core": "data scientist",
+    "company": "Tallowbrook",
+    "seniority": "Senior",
+    "location": "Toronto, Ontario (hybrid, two days a week in the King West office)",
+    "work_mode": "hybrid",
+    "source_url": "pasted by the user",
+    "eligibility": [
+      "Hybrid: two days a week in the Toronto (King West) office, so the candidate must live within commuting distance of Toronto or be willing to move",
+      "Work authorisation and visa sponsorship: not stated in the posting"
+    ]
+  },
+  "asks": [
+    {
+      "id": "M1",
+      "ask": "4+ years in data science or product analytics",
+      "type": "must",
+      "alts": [
+        "data scientist",
+        "product analyst",
+        "data analyst",
+        "product analytics"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "M2",
+      "ask": "Strong SQL",
+      "type": "must",
+      "alts": [
+        "SQL"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "M3",
+      "ask": "Strong Python with pandas, scikit-learn or statsmodels",
+      "type": "must",
+      "alts": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "statsmodels"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "M4",
+      "ask": "Hands-on design and analysis of A/B tests",
+      "type": "must",
+      "alts": [
+        "A/B test",
+        "sample size",
+        "power calculation",
+        "test design",
+        "50/50 split"
+      ],
+      "claimable": true,
+      "note": "notes.md: one A/B test on the onboarding checklist (about 4,000 new accounts, six weeks, week-one activation 41% to 47%). The notes say 'ran'; who designed it is not stated."
+    },
+    {
+      "id": "M5",
+      "ask": "Built churn or propensity models that a business team used",
+      "type": "must",
+      "alts": [
+        "churn model",
+        "churn score",
+        "propensity model",
+        "health score",
+        "risk score"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "M6",
+      "ask": "Cloud data warehouse experience (Snowflake, BigQuery or Redshift)",
+      "type": "must",
+      "alts": [
+        "Snowflake",
+        "BigQuery",
+        "Redshift"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "M7",
+      "ask": "Git version control and code review habits",
+      "type": "must",
+      "alts": [
+        "Git",
+        "GitHub",
+        "pull request",
+        "code review"
+      ],
+      "claimable": true,
+      "note": "notes.md: analytics SQL and Python goes through GitHub pull requests; reviews about five a week for the two other analysts."
+    },
+    {
+      "id": "M8",
+      "ask": "Clear communication with non-technical leaders",
+      "type": "must",
+      "alts": [
+        "leadership team",
+        "executive team",
+        "CEO",
+        "CFO",
+        "non-technical"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "R1",
+      "ask": "Analyse activation, retention and expansion",
+      "type": "role",
+      "alts": [
+        "week-one activation",
+        "90-day retention",
+        "seat growth",
+        "churn drivers"
+      ],
+      "claimable": true,
+      "note": "Retention (base) and activation (notes) are supported; expansion is not in any source."
+    },
+    {
+      "id": "R2",
+      "ask": "Design, run and analyse A/B tests with product managers and engineers",
+      "type": "role",
+      "alts": [
+        "A/B test",
+        "product manager and an engineer",
+        "test variant"
+      ],
+      "claimable": true,
+      "note": "Ran and read one test (notes). Design and work with PMs or engineers on it are not stated."
+    },
+    {
+      "id": "R3",
+      "ask": "Build predictive models (churn, expansion) that customer-facing teams use every week",
+      "type": "role",
+      "alts": [
+        "churn model",
+        "health score",
+        "risk score",
+        "Customer Success",
+        "account managers",
+        "propensity model"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "R4",
+      "ask": "Define event tracking with product and engineering before features ship",
+      "type": "role",
+      "alts": [
+        "event tracking",
+        "tracking plan",
+        "instrumentation",
+        "event schema",
+        "analytics events"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "R5",
+      "ask": "Build and maintain warehouse pipelines and models with SQL, Python and Airflow",
+      "type": "role",
+      "alts": [
+        "Airflow",
+        "data pipeline",
+        "Airflow job",
+        "Airflow DAG",
+        "data dictionary",
+        "dbt"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "R6",
+      "ask": "Present findings and recommendations to directors and executives",
+      "type": "role",
+      "alts": [
+        "leadership team",
+        "executive team",
+        "CEO",
+        "VP Product",
+        "directors"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "R7",
+      "ask": "Mentor analysts and review their SQL and Python",
+      "type": "role",
+      "alts": [
+        "mentored",
+        "code review",
+        "reviewed pull requests",
+        "pull requests",
+        "junior analyst"
+      ],
+      "claimable": true
+    },
+    {
+      "id": "N1",
+      "ask": "Survival analysis or causal inference",
+      "type": "nice",
+      "alts": [
+        "survival analysis",
+        "Kaplan-Meier",
+        "Cox model",
+        "causal inference",
+        "difference-in-differences"
+      ],
+      "claimable": true,
+      "note": "notes.md: mentored a junior analyst on survival analysis for the churn work (Kaplan-Meier curves, a Cox model in lifelines). Whether Jordan built the Cox model is not stated."
+    },
+    {
+      "id": "N2",
+      "ask": "dbt",
+      "type": "nice",
+      "alts": [
+        "dbt"
+      ],
+      "claimable": false,
+      "note": "notes.md: 'Never used: Redshift, BigQuery, dbt, Spark.'"
+    },
+    {
+      "id": "N3",
+      "ask": "Segment, Amplitude or Mixpanel",
+      "type": "nice",
+      "alts": [
+        "Segment",
+        "Amplitude",
+        "Mixpanel"
+      ],
+      "claimable": true,
+      "note": "Segment named in the base résumé's event-tracking bullet and Skills."
+    },
+    {
+      "id": "N4",
+      "ask": "HR, payroll or workforce software experience",
+      "type": "nice",
+      "alts": [
+        "payroll",
+        "time-tracking",
+        "workforce management",
+        "HR software",
+        "scheduling software"
+      ],
+      "claimable": true,
+      "note": "notes.md: B2B payroll and time-tracking software."
+    },
+    {
+      "id": "N5",
+      "ask": "B2B SaaS company experience (the posting says 'ideally')",
+      "type": "nice",
+      "alts": [
+        "B2B",
+        "SaaS",
+        "subscription software",
+        "small businesses"
+      ],
+      "claimable": true,
+      "note": "notes.md: B2B payroll and time-tracking software for small businesses. 'SaaS' (subscription, cloud-hosted) is not stated."
+    }
+  ],
+  "hard_terms": [
+    {
+      "term": "SQL",
+      "type": "must",
+      "claimable": true
+    },
+    {
+      "term": "Python",
+      "type": "must",
+      "claimable": true
+    },
+    {
+      "term": "pandas",
+      "type": "must",
+      "alternatives": [
+        "scikit-learn",
+        "statsmodels"
+      ],
+      "variants": [
+        "sklearn"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "A/B tests",
+      "type": "must",
+      "variants": [
+        "A/B test",
+        "A/B testing",
+        "AB test",
+        "AB testing",
+        "split test"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "churn",
+      "type": "must",
+      "alternatives": [
+        "propensity"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "Snowflake",
+      "type": "must",
+      "alternatives": [
+        "BigQuery",
+        "Redshift"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "Git",
+      "type": "must",
+      "variants": [
+        "GitHub",
+        "GitLab"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "Airflow",
+      "type": "nice",
+      "variants": [
+        "Apache Airflow"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "survival analysis",
+      "type": "nice",
+      "alternatives": [
+        "causal inference"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "dbt",
+      "type": "nice",
+      "claimable": false
+    },
+    {
+      "term": "Segment",
+      "type": "nice",
+      "alternatives": [
+        "Amplitude",
+        "Mixpanel"
+      ],
+      "claimable": true
+    },
+    {
+      "term": "B2B SaaS",
+      "type": "nice",
+      "claimable": true,
+      "variants": [
+        "SaaS",
+        "B2B"
+      ]
+    }
+  ],
+  "do_not_echo": [
+    "data decides what we build next",
+    "ship every week",
+    "find out why customers stay or leave",
+    "design and read experiments",
+    "turn product data into decisions",
+    "decisions our leadership team acts on",
+    "embedded with our Retention product group",
+    "Retention group",
+    "Own the analysis of",
+    "customer-facing teams use every week",
+    "define event tracking before features ship",
+    "build and maintain data pipelines",
+    "present findings and recommendations",
+    "good code review habits",
+    "clear communication with non-technical leaders",
+    "hands-on experience",
+    "strong SQL and Python"
+  ]
+}

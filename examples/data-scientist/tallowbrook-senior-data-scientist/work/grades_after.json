@@ -1,0 +1,153 @@
+{
+  "grades": [
+    {
+      "id": "M1",
+      "grade": "clear",
+      "evidence": "'Product data analyst with seven years in analytics, the last four and a half in product analytics for a B2B SaaS payroll and time-tracking company'"
+    },
+    {
+      "id": "M2",
+      "grade": "clear",
+      "evidence": "'Built a Snowflake and Airflow data pipeline that replaced the finance team's hand-updated spreadsheets with scheduled SQL transformations.'"
+    },
+    {
+      "id": "M3",
+      "grade": "clear",
+      "evidence": "'Built the Python churn model (pandas, scikit-learn) that scores all 38,000 active accounts every night'"
+    },
+    {
+      "id": "M4",
+      "grade": "clear",
+      "evidence": "'Designed and ran the checklist's A/B test... Sized it with a power calculation to detect a 4-point lift in week-one activation, the decision metric.'"
+    },
+    {
+      "id": "M5",
+      "grade": "clear",
+      "evidence": "'In a held-out quarter, about 42% of the model's top 200 accounts cancelled, against a 6% base churn rate. Customer Success calls the top 200 each month.'"
+    },
+    {
+      "id": "M6",
+      "grade": "clear",
+      "evidence": "'Built a Snowflake and Airflow data pipeline that replaced the finance team's hand-updated spreadsheets'"
+    },
+    {
+      "id": "M7",
+      "grade": "clear",
+      "evidence": "'Reviewed about five GitHub pull requests a week from the team's two other analysts.'"
+    },
+    {
+      "id": "M8",
+      "grade": "clear",
+      "evidence": "'Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. The time-tracking add-on's pricing was changed afterwards.'"
+    },
+    {
+      "id": "R1",
+      "grade": "clear",
+      "evidence": "Retention: 'Of the add-on accounts that connected their scheduling tool in week one, 81% were retained at 90 days, against 63%'; activation: 'the variant raised activation from 41% to 47%'; expansion: 'analysed seat expansion among accounts that added the time-tracking add-on.'"
+    },
+    {
+      "id": "R2",
+      "grade": "clear",
+      "evidence": "'Designed and ran the checklist's A/B test with the onboarding product manager and an engineer.'"
+    },
+    {
+      "id": "R3",
+      "grade": "clear",
+      "evidence": "'scores all 38,000 active accounts every night' and 'Built the account health score for Customer Success... refreshed daily by an Airflow job and shown in Tableau.' No expansion model."
+    },
+    {
+      "id": "R4",
+      "grade": "clear",
+      "evidence": "'Worked out the Segment event tracking for new features with product managers before launch.' Engineering not named."
+    },
+    {
+      "id": "R5",
+      "grade": "clear",
+      "evidence": "'Built a Snowflake and Airflow data pipeline that replaced the finance team's hand-updated spreadsheets with scheduled SQL transformations. Documented the 60 core tables in a data dictionary.'"
+    },
+    {
+      "id": "R6",
+      "grade": "clear",
+      "evidence": "'Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite.'"
+    },
+    {
+      "id": "R7",
+      "grade": "clear",
+      "evidence": "'mentored a junior analyst on survival analysis and reviewed her extension of the model to add-on accounts'; 'Reviewed about five GitHub pull requests a week from the team's two other analysts.'"
+    },
+    {
+      "id": "N1",
+      "grade": "clear",
+      "evidence": "'Fitted a Cox survival model (lifelines) for the churn work'"
+    },
+    {
+      "id": "N2",
+      "grade": "none",
+      "evidence": "dbt not mentioned."
+    },
+    {
+      "id": "N3",
+      "grade": "clear",
+      "evidence": "'Worked out the Segment event tracking for new features with product managers before launch.'"
+    },
+    {
+      "id": "N4",
+      "grade": "clear",
+      "evidence": "'a B2B SaaS payroll and time-tracking company whose customers have 5 to 200 employees'"
+    },
+    {
+      "id": "N5",
+      "grade": "clear",
+      "evidence": "'product analytics for a B2B SaaS payroll and time-tracking company'"
+    }
+  ],
+  "risks": [
+    {
+      "claim": "Sized it with a power calculation to detect a 4-point lift in week-one activation, the decision metric. About 4,000 new accounts were split 50/50 over six weeks",
+      "question": "A 4-point lift off a 41% base, at 80% power and a two-sided 5% test, needs roughly 2,400 accounts per arm. You had about 2,000. What did your calculation assume?",
+      "risk": "medium",
+      "prep": "Baseline, minimum detectable effect, alpha, power and sidedness (one-sided fits about 1,900 per arm; two-sided gives about 72% power); a fixed six-week horizon with no peeking; a sample-ratio check; the interval on the 6-point lift (roughly 3 to 9 points)."
+    },
+    {
+      "claim": "the variant raised activation from 41% to 47%",
+      "question": "How is week-one activation defined, and did the lift carry through to 90-day retention?",
+      "risk": "medium",
+      "prep": "The exact metric definition and why it was the decision metric; 90-day retention of both test arms; recognising that the 81% versus 63% gap was observational and the test was the causal check."
+    },
+    {
+      "claim": "In a held-out quarter, about 42% of the model's top 200 accounts cancelled, against a 6% base churn rate. Customer Success calls the top 200 each month.",
+      "question": "Over what window is the 6%? Once Customer Success started calling, how did you keep the evaluation clean, and do the calls save anyone?",
+      "risk": "medium",
+      "prep": "Out-of-time split and churn window; precision and lift (about 7x) in the top 200; recall; leakage checks; why 200 (team capacity); an uncalled holdout or uplift measure for the calls."
+    },
+    {
+      "claim": "Fitted a Cox survival model (lifelines) for the churn work",
+      "question": "What did the Cox model add over the classifier, and how did you check proportional hazards?",
+      "risk": "medium",
+      "prep": "Time-to-cancel framing and censoring; hazard ratios as explainable churn drivers; Schoenfeld residual checks; time-varying usage covariates; concordance; how it fed the offsite talk."
+    },
+    {
+      "claim": "Built the account health score for Customer Success from weighted product-usage signals.",
+      "question": "How were the weights chosen, how do you know the score tracks churn, and why keep it beside the churn model?",
+      "risk": "medium",
+      "prep": "How weights were set (fitted or judgement); churn rate by score band; agreement with the model; what Customer Success uses each one for; drift monitoring."
+    },
+    {
+      "claim": "Presented churn drivers to the CEO, CFO and VP of Product at the 2024 planning offsite. The time-tracking add-on's pricing was changed afterwards.",
+      "question": "What did you recommend, how much did your analysis drive the pricing change, and what happened after it?",
+      "risk": "medium",
+      "prep": "The specific recommendation and its evidence, including the seat-expansion analysis; honest attribution among other inputs; framing for a CFO; churn and expansion tracked after the change."
+    },
+    {
+      "claim": "Reviewed about five GitHub pull requests a week from the team's two other analysts.",
+      "question": "What do you look for in an analyst's pull request? Give one review that changed a result.",
+      "risk": "low",
+      "prep": "Join grain, leakage, reproducibility, tests and readability; a concrete catch; how the survival-analysis mentoring was structured and what the junior analyst's extension found."
+    }
+  ],
+  "recruiter": {
+    "shortlist": "yes",
+    "slop_score": 8,
+    "notes": "Near-exact domain and skills match backed by specific numbers; the main risks are the analyst title missing every 'data scientist' search and a few lines that echo the posting."
+  }
+}

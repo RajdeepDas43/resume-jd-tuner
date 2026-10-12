@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resume input for render_resume_pdf.py (work/resume.json)",
+  "type": "object",
+  "required": [
+    "name",
+    "contact",
+    "sections"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Shown on one centred line in this order, e.g. ['City, Country', 'email', 'phone', 'linkedin.com/in/handle', 'github.com/handle']. Emails and URLs become clickable. Location follows the base resume unless the conventions file says otherwise."
+    },
+    "paper": {
+      "type": "string",
+      "enum": [
+        "letter",
+        "a4"
+      ],
+      "description": "letter for jobs in the US and Canada, a4 everywhere else. Same as layout.paper."
+    },
+    "summary": {
+      "type": "string",
+      "description": "2-4 sentences, about 40-90 words: the candidate's real title or function, what they do and for whom. Never the posting's title copied."
+    },
+    "summary_title": {
+      "type": "string",
+      "description": "Header text for the summary. Default 'Summary'."
+    },
+    "sections": {
+      "type": "array",
+      "description": "In order. Experience first for people with 3+ years of work; Education first for students and new graduates.",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "entries"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Experience / Education / Projects / Certifications / Awards"
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "org": {
+                  "type": "string",
+                  "description": "Employer, school or project name (bold)"
+                },
+                "link": {
+                  "type": "string",
+                  "description": "Optional URL; makes the org name clickable (projects)"
+                },
+                "location": {
+                  "type": "string",
+                  "description": "Printed right of the org. Keep it if the base resume shows it, unless the conventions say to hide it."
+                },
+                "role": {
+                  "type": "string",
+                  "description": "Job title or degree (italic)"
+                },
+                "dates": {
+                  "type": "string",
+                  "description": "Mon YYYY – Mon YYYY, or Mon YYYY – Present"
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "One idea per bullet, 1-3 short sentences (references/writing-rules.md)"
+                },
+                "text": {
+                  "type": "string",
+                  "description": "A plain line instead of bullets, e.g. for an education entry"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "description": "Grouped tools and technologies: {'Languages': ['Go', 'Python'], ...}, or a list of ready-made lines.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "skills_title": {
+      "type": "string",
+      "description": "Header text for the skills block. Default 'Skills'."
+    },
+    "skills_after": {
+      "type": "string",
+      "description": "Title of the section the Skills block follows (e.g. 'Experience'). If omitted, Skills comes last."
+    },
+    "layout": {
+      "type": "object",
+      "description": "Render settings, kept here so every rebuild uses the same ones. Command-line options override them.",
+      "properties": {
+        "paper": {
+          "type": "string",
+          "enum": [
+            "letter",
+            "a4"
+          ]
+        },
+        "font_size": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 11.5
+        },
+        "spacing": {
+          "type": "number",
+          "minimum": 0.8,
+          "maximum": 1.5
+        },
+        "dates": {
+          "type": "string",
+          "enum": [
+            "right",
+            "inline"
+          ]
+        },
+        "fill": {
+          "type": "boolean",
+          "description": "Last-resort layout fill; set only after true content has run out"
+        },
+        "pages": {
+          "type": "integer",
+          "enum": [
+            1,
+            2
+          ]
+        }
+      }
+    }
+  }
+}
