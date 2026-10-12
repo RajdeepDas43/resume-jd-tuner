@@ -10,15 +10,16 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # Pinned so the Python 3.9 job keeps working when ubuntu-latest moves to a newer image.
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
         python-version: ["3.9", "3.13"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -37,7 +38,7 @@ jobs:
       - name: Build the skill zip
         run: python tools/build_zip.py
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: matrix.python-version == '3.13'
         with:
           name: resume-jd-tuner-skill
