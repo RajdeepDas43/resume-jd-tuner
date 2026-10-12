@@ -78,7 +78,7 @@ The skill follows the open Agent Skills format: a `SKILL.md` with scripts, refer
 
 ### Requirements
 
-Python 3.9+ with `reportlab` 4.0+, `pypdf` 5.1+ and `pdfminer.six`:
+Python 3.9+ with `reportlab` 4.0.4+, `pypdf` 5.1+ and `pdfminer.six`:
 
 ```bash
 python3 -m pip install -r requirements.txt

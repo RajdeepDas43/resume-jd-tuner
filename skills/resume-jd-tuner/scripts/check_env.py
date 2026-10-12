@@ -4,7 +4,7 @@
 Usage:
   python3 check_env.py
 
-Needed: Python 3.9+, reportlab 4.0+ (to build the PDF), pypdf 5.1+ (to read PDFs and links;
+Needed: Python 3.9+, reportlab 4.0.4+ (to build the PDF), pypdf 5.1+ (to read PDFs and links;
 older versions glue words together in extracted text, which makes the PDF checks report false
 failures), pdfminer.six (to measure page fill). Optional: pdftotext from poppler (a second PDF
 reader, closer to what many ATS use) and a LaTeX engine (only for users who keep a .tex resume).
@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from resume_text import utf8_stdio  # noqa: E402
 
 PYTHON_PACKAGES = [  # (import name, pip name, minimum version, why)
-    ("reportlab", "reportlab", "4.0", "builds the resume PDF"),
+    ("reportlab", "reportlab", "4.0.4", "builds the resume PDF"),
     ("pypdf", "pypdf", "5.1", "reads PDFs, page counts and links"),
     ("pdfminer", "pdfminer.six", "20221105", "measures the empty space at the bottom of the page"),
 ]

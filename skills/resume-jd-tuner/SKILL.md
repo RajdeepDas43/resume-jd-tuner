@@ -2,7 +2,7 @@
 name: resume-jd-tuner
 description: Tailor a résumé to one job posting and report how well it fits. Takes a job link (or the pasted job text when the link will not load) and the user's résumé (PDF, DOCX, LaTeX or text). Returns a one-page tuned résumé PDF and a fit report covering ATS alignment, interview risk, gaps to close, a quality check and the overall fit before and after tuning. Every claim stays true and the page reads like a person wrote it; reviewer agents screen the draft for AI slop and errors, then recruiter agents verify it against the job before delivery. Use whenever someone shares a job posting, job link or JD with a résumé or CV, asks to tailor, tune, target, optimize or rewrite a résumé or CV for a role, wants an ATS or keyword match check, or asks whether they fit a job, even if they never say "résumé".
 license: Apache-2.0
-compatibility: Python 3.9+ with reportlab 4.0+, pypdf 5.1+ and pdfminer.six (scripts/check_env.py checks). A web fetch tool for job links; pasted text works without one. Subagents are optional. LaTeX résumés need pdflatex, xelatex or lualatex.
+compatibility: Python 3.9+ with reportlab 4.0.4+, pypdf 5.1+ and pdfminer.six (scripts/check_env.py checks). A web fetch tool for job links; pasted text works without one. Subagents are optional. LaTeX résumés need pdflatex, xelatex or lualatex.
 metadata:
   version: "1.0.1"
   author: Rajdeep Das

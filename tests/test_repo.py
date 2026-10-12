@@ -10,7 +10,7 @@ import zipfile
 import pytest
 import yaml
 
-from check_env import installed_version, is_older, version_tuple
+from check_env import PYTHON_PACKAGES, installed_version, is_older, version_tuple
 from conftest import ASSETS, ROOT, SKILL, run_script
 from relevance_score import score
 
@@ -113,6 +113,18 @@ def test_check_env_finds_installed_versions():
     class Placeholder:
         __version__ = "0.0"
     assert installed_version(Placeholder, "not-a-real-package-name") == ""
+
+
+def test_minimum_versions_agree():
+    # CI installs requirements.txt at its oldest; check_env.py, SKILL.md and the README tell users.
+    text = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+    floors = dict(re.findall(r"^([A-Za-z0-9_.\-]+)>=(\S+)$", text, re.M))
+    assert floors == {pip_name: minimum for _, pip_name, minimum, _ in PYTHON_PACKAGES}
+    for doc in (SKILL / "SKILL.md", ROOT / "README.md"):
+        stated = doc.read_text(encoding="utf-8")
+        for name in ("reportlab", "pypdf"):
+            assert re.search(rf"{name}`? {re.escape(floors[name])}\+", stated), \
+                f"{doc.name} should say {name} {floors[name]}+"
 
 
 @pytest.mark.skipif(not os.environ.get("RJT_REQUIRE_TOOLS"), reason="set RJT_REQUIRE_TOOLS=1 to require them")
